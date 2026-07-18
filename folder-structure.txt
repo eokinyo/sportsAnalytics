@@ -1,0 +1,1567 @@
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    09:54                __pycache__
+lar--          08/06/2026    13:09                data
+lar--          17/06/2026    13:19                logs
+lar--          01/06/2026    12:57                notebooks
+lar--          19/06/2026    06:27                outputs
+lar--          19/06/2026    06:27                src
+lar--          01/06/2026    12:57                tests
+la---          01/06/2026    12:59              0 .gitignore
+la---          16/06/2026    09:53           6503 backtest.py
+la---          12/06/2026    21:22           3303 debug.py
+-a---          18/07/2026    16:55              0 folder-structure.txt
+la---          19/06/2026    09:04          20005 generate_analytics.py
+la---          16/06/2026    00:59           8272 generate_cards.py
+la---          20/06/2026    17:37           5819 main.py
+la---          01/06/2026    12:59              0 README.md
+la---          19/06/2026    09:45           5327 referee_report.py
+la---          19/06/2026    05:43          10975 rename_logos.py
+la---          01/06/2026    12:59              0 requirements.txt
+la---          16/06/2026    08:46           2890 run_all_backtests.py
+la---          16/06/2026    08:45           3294 run_all_leagues.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          01/06/2026    12:57                fixtures
+lar--          19/06/2026    05:44                logos
+lar--          16/06/2026    00:43                processed
+lar--          01/06/2026    12:59                raw
+lar--          01/06/2026    12:57                simulations
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\logos
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    05:43                bundesliga
+lar--          19/06/2026    05:43                epl
+lar--          19/06/2026    05:43                laliga
+lar--          19/06/2026    05:43                ligue_1
+lar--          19/06/2026    05:43                serie_a
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\logos\bundesliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    05:08          87896 Augsburg.png
+la---          19/06/2026    05:07         242662 Bayer Leverkusen.png
+la---          19/06/2026    05:07         209672 Bayern Munich.png
+la---          19/06/2026    05:07         132310 Dortmund.png
+la---          19/06/2026    05:08         178303 Ein Frankfurt.png
+la---          19/06/2026    05:08         130234 Elversberg.png
+la---          19/06/2026    05:07         150377 FC Koln.png
+la---          19/06/2026    05:08         110075 Freiburg.png
+la---          19/06/2026    05:08          38874 Hamburg.png
+la---          19/06/2026    05:09          90028 Hoffenheim.png
+la---          19/06/2026    05:07          74919 M'gladbach.png
+la---          19/06/2026    05:08         105152 Mainz.png
+la---          19/06/2026    05:08          87295 Paderborn.png
+la---          19/06/2026    05:08         143709 RB Leipzig.png
+la---          19/06/2026    05:08          81378 Schalke 04.png
+la---          19/06/2026    05:09         139743 Stuttgart.png
+la---          19/06/2026    05:09          72321 Union Berlin.png
+la---          19/06/2026    05:09          62744 Werder Bremen.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\logos\epl
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          09/06/2026    15:34          78778 Arsenal.png
+la---          09/06/2026    15:34          41412 Aston_Villa.png
+la---          09/06/2026    15:34          58393 Bournemouth.png
+la---          09/06/2026    15:34         117682 Brentford.png
+la---          09/06/2026    15:34          74050 Brighton.png
+la---          09/06/2026    15:34          26715 Burnley.png
+la---          09/06/2026    15:34         118358 Chelsea.png
+la---          19/06/2026    05:25         258903 Coventry.png
+la---          09/06/2026    15:35          90818 Crystal_Palace.png
+la---          09/06/2026    15:35         111492 Everton.png
+la---          09/06/2026    15:35          29963 Fulham.png
+la---          19/06/2026    05:25         165426 Hull.png
+la---          19/06/2026    05:25          95674 Ipswich.png
+la---          09/06/2026    15:35          62308 Leeds.png
+la---          09/06/2026    15:35         159424 Liverpool.png
+la---          09/06/2026    15:35         117976 Man_City.png
+la---          09/06/2026    15:35         122819 Man_United.png
+la---          09/06/2026    15:35         148226 Newcastle.png
+la---          09/06/2026    15:36          43961 Nottm Forest.png
+la---          09/06/2026    15:36          41854 Sunderland.png
+la---          09/06/2026    15:36          57153 Tottenham.png
+la---          09/06/2026    15:36          52804 West_Ham.png
+la---          09/06/2026    15:36          37295 Wolves.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\logos\laliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    04:52         135643 Alaves.png
+la---          19/06/2026    04:51         116216 Ath Bilbao.png
+la---          19/06/2026    04:52          60043 Ath Madrid.png
+la---          19/06/2026    04:53          96385 Barcelona.png
+la---          19/06/2026    04:54          75873 Betis.png
+la---          19/06/2026    04:52          61424 Celta.png
+la---          19/06/2026    04:52         123152 Elche.png
+la---          19/06/2026    04:53          95025 Espanol.png
+la---          19/06/2026    04:53         237339 Getafe.png
+la---          19/06/2026    04:53         188370 Girona.png
+la---          19/06/2026    04:53         155043 Levante.png
+la---          19/06/2026    04:53         241110 Mallorca.png
+la---          19/06/2026    04:53          82836 Osasuna.png
+la---          19/06/2026    04:54          60316 Oviedo.png
+la---          19/06/2026    04:54         204265 Real Madrid.png
+la---          19/06/2026    04:55         194784 Sevilla.png
+la---          19/06/2026    04:54         136617 Sociedad.png
+la---          19/06/2026    04:55          88815 Valencia.png
+la---          19/06/2026    04:53         103513 Vallecano.png
+la---          19/06/2026    04:55         130076 Villarreal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\logos\ligue_1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    05:12          99541 Angers.png
+la---          19/06/2026    05:12          86960 Auxerre.png
+la---          19/06/2026    05:14         113098 Brest.png
+la---          19/06/2026    05:13         102101 Le Havre.png
+la---          19/06/2026    05:13         192917 Le Mans.png
+la---          19/06/2026    05:14          99605 Lens.png
+la---          19/06/2026    05:13          92894 Lille.png
+la---          19/06/2026    05:12         101166 Lorient.png
+la---          19/06/2026    05:13          81535 Lyon.png
+la---          19/06/2026    05:13          94275 Marseille.png
+la---          19/06/2026    05:12         129185 Monaco.png
+la---          19/06/2026    05:13         266967 Nice.png
+la---          19/06/2026    05:13         242105 Paris FC.png
+la---          19/06/2026    05:14         150214 Paris SG.png
+la---          19/06/2026    05:14         138441 Rennes.png
+la---          19/06/2026    05:14         141358 Strasbourg.png
+la---          19/06/2026    05:14         154718 Toulouse.png
+la---          19/06/2026    05:14         331105 Troyes.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\logos\serie_a
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    05:01         102832 AC Milan.png
+la---          19/06/2026    05:02          79896 Atalanta.png
+la---          19/06/2026    05:02          68106 Bologna.png
+la---          19/06/2026    05:02          94765 Cagliari.png
+la---          19/06/2026    05:02          65260 Como.png
+la---          19/06/2026    05:02          69082 Fiorentina.png
+la---          19/06/2026    05:03         113397 Frosinone.png
+la---          19/06/2026    05:03          57454 Genoa.png
+la---          19/06/2026    05:03          82567 Inter.png
+la---          19/06/2026    05:03          44221 Juventus.png
+la---          19/06/2026    05:03          64127 Lazio.png
+la---          19/06/2026    05:03         112488 Lecce.png
+la---          19/06/2026    05:01         137358 Monza.png
+la---          19/06/2026    05:03          90386 Napoli.png
+la---          19/06/2026    05:04          78202 Parma.png
+la---          19/06/2026    05:01         287958 Roma.png
+la---          19/06/2026    05:04         129832 Sassuolo.png
+la---          19/06/2026    05:04         101631 Torino.png
+la---          19/06/2026    05:04         153894 Udinese.png
+la---          19/06/2026    05:04          51512 Venezia.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\processed
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    00:44                bundesliga
+lar--          16/06/2026    00:14                epl
+lar--          15/06/2026    23:59                laliga
+lar--          16/06/2026    00:44                ligue_1
+lar--          16/06/2026    00:44                serie_a
+la---          01/06/2026    13:49            599 epl_2025_2026_current_ratings.csv
+la---          01/06/2026    13:49        1390978 epl_elo_history.csv
+la---          01/06/2026    13:49           1342 epl_latest_ratings.csv
+la---          02/06/2026    19:01        1106800 epl_matches_clean.csv
+la---          01/06/2026    17:19            604 epl_ratings_before_2025_2026.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\processed\bundesliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    07:57        1037488 bundesliga_matches_clean.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\processed\epl
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          24/06/2026    23:42        1291886 epl_matches_clean.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\processed\laliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    07:57        1075143 laliga_matches_clean.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\processed\ligue_1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    07:57        1071770 ligue_1_matches_clean.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\processed\serie_a
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    07:57        1120820 serie_a_matches_clean.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\raw
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          01/06/2026    13:16                bundesliga
+lar--          01/06/2026    13:15                championship
+lar--          02/06/2026    19:00                epl
+lar--          01/06/2026    13:15                laliga
+lar--          01/06/2026    13:17                ligue_1
+lar--          01/06/2026    13:16                serie_a
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\raw\bundesliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          01/06/2026    13:15          51977 bundesliga_2000_2001.csv
+la---          01/06/2026    13:15          54310 bundesliga_2001_2002.csv
+la---          01/06/2026    13:15          45166 bundesliga_2002_2003.csv
+la---          01/06/2026    13:15          67138 bundesliga_2003_2004.csv
+la---          01/06/2026    13:15          68164 bundesliga_2004_2005.csv
+la---          01/06/2026    13:15          79455 bundesliga_2005_2006.csv
+la---          01/06/2026    13:15          80603 bundesliga_2006_2007.csv
+la---          01/06/2026    13:15          84007 bundesliga_2007_2008.csv
+la---          01/06/2026    13:15          84434 bundesliga_2008_2009.csv
+la---          01/06/2026    13:15          83949 bundesliga_2009_2010.csv
+la---          01/06/2026    13:15          85297 bundesliga_2010_2011.csv
+la---          01/06/2026    13:15          85432 bundesliga_2011_2012.csv
+la---          01/06/2026    13:15          90290 bundesliga_2012_2013.csv
+la---          01/06/2026    13:15          82050 bundesliga_2013_2014.csv
+la---          01/06/2026    13:15          79501 bundesliga_2014_2015.csv
+la---          01/06/2026    13:15          78486 bundesliga_2015_2016.csv
+la---          01/06/2026    13:15          78773 bundesliga_2016_2017.csv
+la---          01/06/2026    13:15          78948 bundesliga_2017_2018.csv
+la---          01/06/2026    13:16          75894 bundesliga_2018_2019.csv
+la---          01/06/2026    13:16         139272 bundesliga_2019_2020.csv
+la---          01/06/2026    13:16         139382 bundesliga_2020_2021.csv
+la---          01/06/2026    13:16         139484 bundesliga_2021_2022.csv
+la---          01/06/2026    13:16         139609 bundesliga_2022_2023.csv
+la---          01/06/2026    13:16         136132 bundesliga_2023_2024.csv
+la---          01/06/2026    13:16         156724 bundesliga_2024_2025.csv
+la---          17/06/2026    12:52         160251 bundesliga_2025_2026.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\raw\championship
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          01/06/2026    13:14          90562 championship_2000_2001.csv
+la---          01/06/2026    13:14          97503 championship_2001_2002.csv
+la---          01/06/2026    13:14         100996 championship_2002_2003.csv
+la---          01/06/2026    13:14         123791 championship_2003_2004.csv
+la---          01/06/2026    13:14         124888 championship_2004_2005.csv
+la---          01/06/2026    13:14         149075 championship_2005_2006.csv
+la---          01/06/2026    13:14         149587 championship_2006_2007.csv
+la---          01/06/2026    13:14         156161 championship_2007_2008.csv
+la---          01/06/2026    13:14         157880 championship_2008_2009.csv
+la---          01/06/2026    13:14         157418 championship_2009_2010.csv
+la---          01/06/2026    13:14         157450 championship_2010_2011.csv
+la---          01/06/2026    13:14         157654 championship_2011_2012.csv
+la---          01/06/2026    13:14         161367 championship_2012_2013.csv
+la---          01/06/2026    13:14         152280 championship_2013_2014.csv
+la---          01/06/2026    13:14         148327 championship_2014_2015.csv
+la---          01/06/2026    13:14         146110 championship_2015_2016.csv
+la---          01/06/2026    13:14         146917 championship_2016_2017.csv
+la---          01/06/2026    13:14         147418 championship_2017_2018.csv
+la---          01/06/2026    13:15         141468 championship_2018_2019.csv
+la---          01/06/2026    13:15         255293 championship_2019_2020.csv
+la---          01/06/2026    13:15         256519 championship_2020_2021.csv
+la---          01/06/2026    13:15         256434 championship_2021_2022.csv
+la---          01/06/2026    13:15         256332 championship_2022_2023.csv
+la---          01/06/2026    13:15         251735 championship_2023_2024.csv
+la---          01/06/2026    13:15         287539 championship_2024_2025.csv
+la---          01/06/2026    13:15         294946 championship_2025_2026.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\raw\epl
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          01/06/2026    13:14          62457 epl_2000_2001.csv
+la---          01/06/2026    13:14          66611 epl_2001_2002.csv
+la---          01/06/2026    13:14          72703 epl_2002_2003.csv
+la---          01/06/2026    13:14          85819 epl_2003_2004.csv
+la---          01/06/2026    13:14          86284 epl_2004_2005.csv
+la---          01/06/2026    13:14         102510 epl_2005_2006.csv
+la---          01/06/2026    13:14         102424 epl_2006_2007.csv
+la---          01/06/2026    13:14         106064 epl_2007_2008.csv
+la---          01/06/2026    13:14         106586 epl_2008_2009.csv
+la---          01/06/2026    13:14         106133 epl_2009_2010.csv
+la---          01/06/2026    13:14         106967 epl_2010_2011.csv
+la---          01/06/2026    13:14         106684 epl_2011_2012.csv
+la---          01/06/2026    13:14         113466 epl_2012_2013.csv
+la---          01/06/2026    13:14         104023 epl_2013_2014.csv
+la---          01/06/2026    13:14         101281 epl_2014_2015.csv
+la---          01/06/2026    13:14         101037 epl_2015_2016.csv
+la---          01/06/2026    13:14         100371 epl_2016_2017.csv
+la---          01/06/2026    13:14         101115 epl_2017_2018.csv
+la---          01/06/2026    13:14          96525 epl_2018_2019.csv
+la---          01/06/2026    13:14         175856 epl_2019_2020.csv
+la---          01/06/2026    13:14         176196 epl_2020_2021.csv
+la---          01/06/2026    13:14         175747 epl_2021_2022.csv
+la---          01/06/2026    13:14         176561 epl_2022_2023.csv
+la---          01/06/2026    13:14         172577 epl_2023_2024.csv
+la---          01/06/2026    13:14         197494 epl_2024_2025.csv
+la---          17/06/2026    12:39         203819 epl_2025_2026.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\raw\laliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          01/06/2026    13:15          39347 laliga_2000_2001.csv
+la---          01/06/2026    13:15          42750 laliga_2001_2002.csv
+la---          01/06/2026    13:15          55171 laliga_2002_2003.csv
+la---          01/06/2026    13:15          73211 laliga_2003_2004.csv
+la---          01/06/2026    13:15          73832 laliga_2004_2005.csv
+la---          01/06/2026    13:15          99323 laliga_2005_2006.csv
+la---          01/06/2026    13:15          99347 laliga_2006_2007.csv
+la---          01/06/2026    13:15         103089 laliga_2007_2008.csv
+la---          01/06/2026    13:15         104267 laliga_2008_2009.csv
+la---          01/06/2026    13:15         103832 laliga_2009_2010.csv
+la---          01/06/2026    13:15         104079 laliga_2010_2011.csv
+la---          01/06/2026    13:15         104358 laliga_2011_2012.csv
+la---          01/06/2026    13:15         110926 laliga_2012_2013.csv
+la---          01/06/2026    13:15         100630 laliga_2013_2014.csv
+la---          01/06/2026    13:15          97500 laliga_2014_2015.csv
+la---          01/06/2026    13:15          96426 laliga_2015_2016.csv
+la---          01/06/2026    13:15          96607 laliga_2016_2017.csv
+la---          01/06/2026    13:15          97182 laliga_2017_2018.csv
+la---          01/06/2026    13:15          93295 laliga_2018_2019.csv
+la---          01/06/2026    13:15         171865 laliga_2019_2020.csv
+la---          01/06/2026    13:15         172102 laliga_2020_2021.csv
+la---          01/06/2026    13:15         172555 laliga_2021_2022.csv
+la---          01/06/2026    13:15         172580 laliga_2022_2023.csv
+la---          01/06/2026    13:15         168545 laliga_2023_2024.csv
+la---          01/06/2026    13:15         193247 laliga_2024_2025.csv
+la---          17/06/2026    12:45         198034 laliga_2025_2026.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\raw\ligue_1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          01/06/2026    13:16          28945 ligue_1_2000_2001.csv
+la---          01/06/2026    13:16          32306 ligue_1_2001_2002.csv
+la---          01/06/2026    13:16          46149 ligue_1_2002_2003.csv
+la---          01/06/2026    13:16          59224 ligue_1_2003_2004.csv
+la---          01/06/2026    13:16          65630 ligue_1_2004_2005.csv
+la---          01/06/2026    13:16          93456 ligue_1_2005_2006.csv
+la---          01/06/2026    13:16          95423 ligue_1_2006_2007.csv
+la---          01/06/2026    13:16         100692 ligue_1_2007_2008.csv
+la---          01/06/2026    13:16         101586 ligue_1_2008_2009.csv
+la---          01/06/2026    13:16         101020 ligue_1_2009_2010.csv
+la---          01/06/2026    13:16         101071 ligue_1_2010_2011.csv
+la---          01/06/2026    13:16         103039 ligue_1_2011_2012.csv
+la---          01/06/2026    13:16         110456 ligue_1_2012_2013.csv
+la---          01/06/2026    13:16         100833 ligue_1_2013_2014.csv
+la---          01/06/2026    13:16          97142 ligue_1_2014_2015.csv
+la---          01/06/2026    13:16          95528 ligue_1_2015_2016.csv
+la---          01/06/2026    13:16          95309 ligue_1_2016_2017.csv
+la---          01/06/2026    13:16          95734 ligue_1_2017_2018.csv
+la---          01/06/2026    13:16          92269 ligue_1_2018_2019.csv
+la---          01/06/2026    13:17         125291 ligue_1_2019_2020.csv
+la---          01/06/2026    13:17         170920 ligue_1_2020_2021.csv
+la---          01/06/2026    13:17         171655 ligue_1_2021_2022.csv
+la---          01/06/2026    13:17         171546 ligue_1_2022_2023.csv
+la---          01/06/2026    13:17         135307 ligue_1_2023_2024.csv
+la---          01/06/2026    13:17         155013 ligue_1_2024_2025.csv
+la---          17/06/2026    12:57         158271 ligue_1_2025_2026.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\data\raw\serie_a
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          01/06/2026    13:16          30119 serie_a_2000_2001.csv
+la---          01/06/2026    13:16          32048 serie_a_2001_2002.csv
+la---          01/06/2026    13:16          41640 serie_a_2002_2003.csv
+la---          01/06/2026    13:16          54028 serie_a_2003_2004.csv
+la---          01/06/2026    13:16          69884 serie_a_2004_2005.csv
+la---          01/06/2026    13:16         100238 serie_a_2005_2006.csv
+la---          01/06/2026    13:16         100491 serie_a_2006_2007.csv
+la---          01/06/2026    13:16         100189 serie_a_2007_2008.csv
+la---          01/06/2026    13:16         100967 serie_a_2008_2009.csv
+la---          01/06/2026    13:16         100988 serie_a_2009_2010.csv
+la---          01/06/2026    13:16         102409 serie_a_2010_2011.csv
+la---          01/06/2026    13:16         102781 serie_a_2011_2012.csv
+la---          01/06/2026    13:16         109875 serie_a_2012_2013.csv
+la---          01/06/2026    13:16         100091 serie_a_2013_2014.csv
+la---          01/06/2026    13:16          96490 serie_a_2014_2015.csv
+la---          01/06/2026    13:16          95509 serie_a_2015_2016.csv
+la---          01/06/2026    13:16          95429 serie_a_2016_2017.csv
+la---          01/06/2026    13:16          95518 serie_a_2017_2018.csv
+la---          01/06/2026    13:16          91773 serie_a_2018_2019.csv
+la---          01/06/2026    13:16         170511 serie_a_2019_2020.csv
+la---          01/06/2026    13:16         171048 serie_a_2020_2021.csv
+la---          01/06/2026    13:16         171585 serie_a_2021_2022.csv
+la---          01/06/2026    13:16         171954 serie_a_2022_2023.csv
+la---          01/06/2026    13:16         167396 serie_a_2023_2024.csv
+la---          01/06/2026    13:16         192106 serie_a_2024_2025.csv
+la---          17/06/2026    13:02         196598 serie_a_2025_2026.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\logs
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          16/06/2026    09:13         360060 run_all_backtests_2026-06-16_08-46-58.log
+la---          16/06/2026    18:01        3673885 run_all_backtests_2026-06-16_09-54-45.log
+la---          17/06/2026    08:48        3676185 run_all_backtests_2026-06-17_00-06-42.log
+la---          17/06/2026    22:09        3676501 run_all_backtests_2026-06-17_13-19-09.log
+la---          16/06/2026    01:27         202028 run_all_leagues_2026-06-16_00-59-36.log
+la---          17/06/2026    00:03         201959 run_all_leagues_2026-06-16_23-37-07.log
+la---          17/06/2026    13:09         202153 run_all_leagues_2026-06-17_12-39-38.log
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    06:27                analytics
+lar--          16/06/2026    09:08                backtests
+lar--          16/06/2026    01:24                cards
+lar--          01/06/2026    12:57                figures
+lar--          01/06/2026    12:57                reports
+lar--          16/06/2026    01:21                tables
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    07:32                bundesliga
+lar--          19/06/2026    07:32                epl
+lar--          19/06/2026    07:32                laliga
+lar--          19/06/2026    07:32                ligue_1
+lar--          19/06/2026    07:32                serie_a
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\bundesliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    07:33                attacking
+lar--          19/06/2026    08:45                comebacks
+lar--          19/06/2026    07:43                defensive
+lar--          19/06/2026    07:57                discipline
+lar--          19/06/2026    08:54                form
+lar--          19/06/2026    08:34                home_away
+lar--          19/06/2026    09:05                over_under
+lar--          19/06/2026    07:32                referee
+la---          19/06/2026    07:17         105942 attacking_chance_creators.png
+la---          19/06/2026    07:17         119417 attacking_clinical.png
+la---          19/06/2026    07:17         116132 attacking_effective.png
+la---          19/06/2026    07:17          94310 attacking_lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\bundesliga\attacking
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05          98828 chance_creators.png
+la---          19/06/2026    09:05         113551 clinical.png
+la---          19/06/2026    09:05         110488 effective.png
+la---          19/06/2026    09:05          95624 lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\bundesliga\comebacks
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05          94496 bottle_jobs.png
+la---          19/06/2026    09:05         112792 comeback_kings.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\bundesliga\defensive
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         110817 defensive_record.png
+la---          19/06/2026    09:05         104253 shot_stoppers.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\bundesliga\discipline
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         125527 discipline.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\bundesliga\form
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05          93734 cold_streaks.png
+la---          19/06/2026    09:05         101465 current_form.png
+la---          19/06/2026    09:05          97681 hot_streaks.png
+la---          19/06/2026    09:05          98816 rolling_attack.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\bundesliga\home_away
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         117539 away_warriors.png
+la---          19/06/2026    09:05         123231 home_fortress.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\bundesliga\over_under
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         126728 over_under.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    07:33                attacking
+lar--          19/06/2026    08:45                comebacks
+lar--          19/06/2026    07:43                defensive
+lar--          19/06/2026    07:57                discipline
+lar--          19/06/2026    08:54                form
+lar--          19/06/2026    08:34                home_away
+lar--          19/06/2026    09:04                over_under
+lar--          19/06/2026    09:45                referee
+la---          19/06/2026    07:17         122754 attacking_chance_creators.png
+la---          19/06/2026    07:17         121928 attacking_clinical.png
+la---          19/06/2026    07:17         127439 attacking_effective.png
+la---          19/06/2026    07:17         103392 attacking_lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl\attacking
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         116014 chance_creators.png
+la---          19/06/2026    09:04         115445 clinical.png
+la---          19/06/2026    09:04         121731 effective.png
+la---          19/06/2026    09:04         104695 lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl\comebacks
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         113400 bottle_jobs.png
+la---          19/06/2026    09:04         119556 comeback_kings.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl\defensive
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         119094 defensive_record.png
+la---          19/06/2026    09:04         112972 shot_stoppers.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl\discipline
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         131978 discipline.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl\form
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         104968 cold_streaks.png
+la---          19/06/2026    09:04          99277 current_form.png
+la---          19/06/2026    09:04         106699 hot_streaks.png
+la---          19/06/2026    09:04         103670 rolling_attack.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl\home_away
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         127181 away_warriors.png
+la---          19/06/2026    09:04         128072 home_fortress.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl\over_under
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         132181 over_under.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\epl\referee
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    10:47          70560 A_Taylor__Arsenal_vs_Man_City.png
+la---          19/06/2026    09:04          90092 strictness.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\laliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    07:33                attacking
+lar--          19/06/2026    08:45                comebacks
+lar--          19/06/2026    07:43                defensive
+lar--          19/06/2026    07:57                discipline
+lar--          19/06/2026    08:54                form
+lar--          19/06/2026    08:34                home_away
+lar--          19/06/2026    09:05                over_under
+lar--          19/06/2026    07:32                referee
+la---          19/06/2026    07:17         117740 attacking_chance_creators.png
+la---          19/06/2026    07:17         121157 attacking_clinical.png
+la---          19/06/2026    07:17         121915 attacking_effective.png
+la---          19/06/2026    07:17         105445 attacking_lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\laliga\attacking
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         110641 chance_creators.png
+la---          19/06/2026    09:04         115192 clinical.png
+la---          19/06/2026    09:04         116721 effective.png
+la---          19/06/2026    09:04         106755 lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\laliga\comebacks
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         117502 bottle_jobs.png
+la---          19/06/2026    09:04         123088 comeback_kings.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\laliga\defensive
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         125225 defensive_record.png
+la---          19/06/2026    09:04         115623 shot_stoppers.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\laliga\discipline
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         139637 discipline.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\laliga\form
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         109203 cold_streaks.png
+la---          19/06/2026    09:05          99995 current_form.png
+la---          19/06/2026    09:05         100468 hot_streaks.png
+la---          19/06/2026    09:05         110545 rolling_attack.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\laliga\home_away
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:04         130803 away_warriors.png
+la---          19/06/2026    09:04         125159 home_fortress.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\laliga\over_under
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         134351 over_under.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\ligue_1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    07:33                attacking
+lar--          19/06/2026    08:45                comebacks
+lar--          19/06/2026    07:43                defensive
+lar--          19/06/2026    07:57                discipline
+lar--          19/06/2026    08:54                form
+lar--          19/06/2026    08:34                home_away
+lar--          19/06/2026    09:05                over_under
+lar--          19/06/2026    07:32                referee
+la---          19/06/2026    07:17         110455 attacking_chance_creators.png
+la---          19/06/2026    07:17         118199 attacking_clinical.png
+la---          19/06/2026    07:17         120976 attacking_effective.png
+la---          19/06/2026    07:17         100250 attacking_lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\ligue_1\attacking
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         103622 chance_creators.png
+la---          19/06/2026    09:05         112349 clinical.png
+la---          19/06/2026    09:05         114889 effective.png
+la---          19/06/2026    09:05         101573 lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\ligue_1\comebacks
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         117247 bottle_jobs.png
+la---          19/06/2026    09:05         125707 comeback_kings.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\ligue_1\defensive
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         116281 defensive_record.png
+la---          19/06/2026    09:05         108748 shot_stoppers.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\ligue_1\discipline
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         134660 discipline.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\ligue_1\form
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         113053 cold_streaks.png
+la---          19/06/2026    09:05         103800 current_form.png
+la---          19/06/2026    09:05         108421 hot_streaks.png
+la---          19/06/2026    09:05         108071 rolling_attack.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\ligue_1\home_away
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         120271 away_warriors.png
+la---          19/06/2026    09:05         118926 home_fortress.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\ligue_1\over_under
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         133628 over_under.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\serie_a
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    07:33                attacking
+lar--          19/06/2026    08:45                comebacks
+lar--          19/06/2026    07:43                defensive
+lar--          19/06/2026    07:57                discipline
+lar--          19/06/2026    08:54                form
+lar--          19/06/2026    08:34                home_away
+lar--          19/06/2026    09:05                over_under
+lar--          19/06/2026    07:32                referee
+la---          19/06/2026    07:17         105952 attacking_chance_creators.png
+la---          19/06/2026    07:17         107384 attacking_clinical.png
+la---          19/06/2026    07:17         100337 attacking_effective.png
+la---          19/06/2026    07:17          85540 attacking_lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\serie_a\attacking
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05          99094 chance_creators.png
+la---          19/06/2026    09:05         101323 clinical.png
+la---          19/06/2026    09:05          94966 effective.png
+la---          19/06/2026    09:05          86841 lethal.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\serie_a\comebacks
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05          99049 bottle_jobs.png
+la---          19/06/2026    09:05         111038 comeback_kings.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\serie_a\defensive
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05          99380 defensive_record.png
+la---          19/06/2026    09:05         101453 shot_stoppers.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\serie_a\discipline
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         117923 discipline.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\serie_a\form
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05          96707 cold_streaks.png
+la---          19/06/2026    09:05          89454 current_form.png
+la---          19/06/2026    09:05          98488 hot_streaks.png
+la---          19/06/2026    09:05          92966 rolling_attack.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\serie_a\home_away
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         115176 away_warriors.png
+la---          19/06/2026    09:05         113030 home_fortress.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\analytics\serie_a\over_under
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    09:05         120304 over_under.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\backtests
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    09:03                bundesliga
+lar--          16/06/2026    08:52                epl
+lar--          16/06/2026    08:58                laliga
+lar--          16/06/2026    09:08                ligue_1
+lar--          16/06/2026    09:13                serie_a
+la---          15/06/2026    13:55           1898 2010_2011_backtest_2010-09-30.csv
+la---          15/06/2026    13:55           1928 2010_2011_backtest_2010-12-31.csv
+la---          15/06/2026    13:55           1933 2010_2011_backtest_2011-03-31.csv
+la---          15/06/2026    13:55           1924 2010_2011_backtest_2011-05-01.csv
+la---          15/06/2026    13:56           1811 2011_2012_backtest_2011-09-30.csv
+la---          15/06/2026    13:56           1777 2011_2012_backtest_2011-12-31.csv
+la---          15/06/2026    13:56           1921 2011_2012_backtest_2012-03-31.csv
+la---          15/06/2026    13:56           1956 2011_2012_backtest_2012-05-01.csv
+la---          15/06/2026    13:57           1848 2012_2013_backtest_2012-09-30.csv
+la---          15/06/2026    13:57           1938 2012_2013_backtest_2012-12-31.csv
+la---          15/06/2026    13:57           1943 2012_2013_backtest_2013-03-31.csv
+la---          15/06/2026    13:57           1933 2012_2013_backtest_2013-05-01.csv
+la---          15/06/2026    13:57           1922 2013_2014_backtest_2013-09-30.csv
+la---          15/06/2026    13:58           1840 2013_2014_backtest_2013-12-31.csv
+la---          15/06/2026    13:58           1902 2013_2014_backtest_2014-03-31.csv
+la---          15/06/2026    13:58           1930 2013_2014_backtest_2014-05-01.csv
+la---          15/06/2026    13:58           1923 2014_2015_backtest_2014-09-30.csv
+la---          15/06/2026    13:58           1893 2014_2015_backtest_2014-12-31.csv
+la---          15/06/2026    13:59           1903 2014_2015_backtest_2015-03-31.csv
+la---          15/06/2026    13:59           1870 2014_2015_backtest_2015-05-01.csv
+la---          15/06/2026    13:59           1842 2015_2016_backtest_2015-09-30.csv
+la---          15/06/2026    13:59           1828 2015_2016_backtest_2015-12-31.csv
+la---          15/06/2026    13:59           1941 2015_2016_backtest_2016-03-31.csv
+la---          15/06/2026    14:00           1922 2015_2016_backtest_2016-05-01.csv
+la---          15/06/2026    14:00           1923 2016_2017_backtest_2016-09-30.csv
+la---          15/06/2026    14:00           1943 2016_2017_backtest_2016-12-31.csv
+la---          15/06/2026    14:00           1931 2016_2017_backtest_2017-03-31.csv
+la---          15/06/2026    14:00           1939 2016_2017_backtest_2017-05-01.csv
+la---          15/06/2026    14:01           1891 2017_2018_backtest_2017-09-30.csv
+la---          15/06/2026    14:01           1895 2017_2018_backtest_2017-12-31.csv
+la---          15/06/2026    14:01           1922 2017_2018_backtest_2018-03-31.csv
+la---          15/06/2026    14:01           1881 2017_2018_backtest_2018-05-01.csv
+la---          15/06/2026    14:01           1910 2018_2019_backtest_2018-09-30.csv
+la---          15/06/2026    14:02           1905 2018_2019_backtest_2018-12-31.csv
+la---          15/06/2026    14:02           1934 2018_2019_backtest_2019-03-31.csv
+la---          15/06/2026    14:02           1980 2018_2019_backtest_2019-05-01.csv
+la---          15/06/2026    14:02           1822 2019_2020_backtest_2019-09-30.csv
+la---          15/06/2026    14:02           1944 2019_2020_backtest_2019-12-31.csv
+la---          15/06/2026    14:02           1945 2019_2020_backtest_2020-03-31.csv
+la---          15/06/2026    14:03           1945 2019_2020_backtest_2020-05-01.csv
+la---          15/06/2026    14:03           1906 2021_2022_backtest_2021-09-30.csv
+la---          15/06/2026    14:03           1936 2021_2022_backtest_2021-12-31.csv
+la---          15/06/2026    14:03           1898 2021_2022_backtest_2022-03-31.csv
+la---          15/06/2026    14:03           1971 2021_2022_backtest_2022-05-01.csv
+la---          15/06/2026    14:04           1896 2022_2023_backtest_2022-09-30.csv
+la---          15/06/2026    14:04           1913 2022_2023_backtest_2022-12-31.csv
+la---          15/06/2026    14:04           1917 2022_2023_backtest_2023-03-31.csv
+la---          15/06/2026    14:04           1983 2022_2023_backtest_2023-05-01.csv
+la---          15/06/2026    14:04           1848 2023_2024_backtest_2023-09-30.csv
+la---          15/06/2026    14:04           1860 2023_2024_backtest_2023-12-31.csv
+la---          15/06/2026    14:05           1913 2023_2024_backtest_2024-03-31.csv
+la---          15/06/2026    14:05           1894 2023_2024_backtest_2024-05-01.csv
+la---          15/06/2026    14:05           5970 backtest_summary_2010_2011_to_2023_2024.csv
+la---          02/06/2026    14:25           5925 backtest_summary_2014_2015_to_2019_2020.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\backtests\bundesliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    16:47           1791 2010_2011_backtest_2010-09-30.csv
+la---          17/06/2026    16:49           1758 2010_2011_backtest_2010-12-31.csv
+la---          17/06/2026    16:51           1821 2010_2011_backtest_2011-03-31.csv
+la---          17/06/2026    16:52           1812 2010_2011_backtest_2011-05-01.csv
+la---          17/06/2026    16:54           1758 2011_2012_backtest_2011-09-30.csv
+la---          17/06/2026    16:56           1808 2011_2012_backtest_2011-12-31.csv
+la---          17/06/2026    16:57           1728 2011_2012_backtest_2012-03-31.csv
+la---          17/06/2026    16:59           1705 2011_2012_backtest_2012-05-01.csv
+la---          17/06/2026    17:01           1835 2012_2013_backtest_2012-09-30.csv
+la---          17/06/2026    17:02           1811 2012_2013_backtest_2012-12-31.csv
+la---          17/06/2026    17:04           1779 2012_2013_backtest_2013-03-31.csv
+la---          17/06/2026    17:05           1797 2012_2013_backtest_2013-05-01.csv
+la---          17/06/2026    17:07           1805 2013_2014_backtest_2013-09-30.csv
+la---          17/06/2026    17:09           1720 2013_2014_backtest_2013-12-31.csv
+la---          17/06/2026    17:10           1756 2013_2014_backtest_2014-03-31.csv
+la---          17/06/2026    17:12           1806 2013_2014_backtest_2014-05-01.csv
+la---          17/06/2026    17:14           1799 2014_2015_backtest_2014-09-30.csv
+la---          17/06/2026    17:16           1799 2014_2015_backtest_2014-12-31.csv
+la---          17/06/2026    17:17           1824 2014_2015_backtest_2015-03-31.csv
+la---          17/06/2026    17:18           1812 2014_2015_backtest_2015-05-01.csv
+la---          17/06/2026    17:20           1847 2015_2016_backtest_2015-09-30.csv
+la---          17/06/2026    17:22           1781 2015_2016_backtest_2015-12-31.csv
+la---          17/06/2026    17:24           1795 2015_2016_backtest_2016-03-31.csv
+la---          17/06/2026    17:25           1752 2015_2016_backtest_2016-05-01.csv
+la---          17/06/2026    17:27           1777 2016_2017_backtest_2016-09-30.csv
+la---          17/06/2026    17:29           1728 2016_2017_backtest_2016-12-31.csv
+la---          17/06/2026    17:30           1792 2016_2017_backtest_2017-03-31.csv
+la---          17/06/2026    17:32           1782 2016_2017_backtest_2017-05-01.csv
+la---          17/06/2026    17:34           1743 2017_2018_backtest_2017-09-30.csv
+la---          17/06/2026    17:36           1833 2017_2018_backtest_2017-12-31.csv
+la---          17/06/2026    17:37           1766 2017_2018_backtest_2018-03-31.csv
+la---          17/06/2026    17:38           1787 2017_2018_backtest_2018-05-01.csv
+la---          17/06/2026    17:40           1771 2018_2019_backtest_2018-09-30.csv
+la---          17/06/2026    17:42           1787 2018_2019_backtest_2018-12-31.csv
+la---          17/06/2026    17:44           1834 2018_2019_backtest_2019-03-31.csv
+la---          17/06/2026    17:45           1764 2018_2019_backtest_2019-05-01.csv
+la---          17/06/2026    17:47           1845 2019_2020_backtest_2019-09-30.csv
+la---          17/06/2026    17:49           1794 2019_2020_backtest_2019-12-31.csv
+la---          17/06/2026    17:50           1750 2019_2020_backtest_2020-03-31.csv
+la---          17/06/2026    17:52           1750 2019_2020_backtest_2020-05-01.csv
+la---          17/06/2026    17:54           1801 2021_2022_backtest_2021-09-30.csv
+la---          17/06/2026    17:56           1778 2021_2022_backtest_2021-12-31.csv
+la---          17/06/2026    17:57           1732 2021_2022_backtest_2022-03-31.csv
+la---          17/06/2026    17:58           1808 2021_2022_backtest_2022-05-01.csv
+la---          17/06/2026    18:00           1797 2022_2023_backtest_2022-09-30.csv
+la---          17/06/2026    18:02           1836 2022_2023_backtest_2022-12-31.csv
+la---          17/06/2026    18:04           1828 2022_2023_backtest_2023-03-31.csv
+la---          17/06/2026    18:05           1818 2022_2023_backtest_2023-05-01.csv
+la---          17/06/2026    18:07           1760 2023_2024_backtest_2023-09-30.csv
+la---          17/06/2026    18:09           1757 2023_2024_backtest_2023-12-31.csv
+la---          17/06/2026    18:10           1779 2023_2024_backtest_2024-03-31.csv
+la---          17/06/2026    18:12           1788 2023_2024_backtest_2024-05-01.csv
+la---          17/06/2026    18:12           7215 backtest_summary_2010_2011_to_2023_2024.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\backtests\epl
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    13:21           2006 2010_2011_backtest_2010-09-30.csv
+la---          17/06/2026    13:23           1952 2010_2011_backtest_2010-12-31.csv
+la---          17/06/2026    13:25           1992 2010_2011_backtest_2011-03-31.csv
+la---          17/06/2026    13:27           1975 2010_2011_backtest_2011-05-01.csv
+la---          17/06/2026    13:29           1981 2011_2012_backtest_2011-09-30.csv
+la---          17/06/2026    13:31           1981 2011_2012_backtest_2011-12-31.csv
+la---          17/06/2026    13:33           1939 2011_2012_backtest_2012-03-31.csv
+la---          17/06/2026    13:34           1937 2011_2012_backtest_2012-05-01.csv
+la---          17/06/2026    13:37           1957 2012_2013_backtest_2012-09-30.csv
+la---          17/06/2026    13:39           1985 2012_2013_backtest_2012-12-31.csv
+la---          17/06/2026    13:41           1973 2012_2013_backtest_2013-03-31.csv
+la---          17/06/2026    13:42           1973 2012_2013_backtest_2013-05-01.csv
+la---          17/06/2026    13:45           1871 2013_2014_backtest_2013-09-30.csv
+la---          17/06/2026    13:47           1912 2013_2014_backtest_2013-12-31.csv
+la---          17/06/2026    13:49           1929 2013_2014_backtest_2014-03-31.csv
+la---          17/06/2026    13:50           1986 2013_2014_backtest_2014-05-01.csv
+la---          17/06/2026    13:53           1970 2014_2015_backtest_2014-09-30.csv
+la---          17/06/2026    13:55           1916 2014_2015_backtest_2014-12-31.csv
+la---          17/06/2026    13:56           1898 2014_2015_backtest_2015-03-31.csv
+la---          17/06/2026    13:58           1938 2014_2015_backtest_2015-05-01.csv
+la---          17/06/2026    14:01           1962 2015_2016_backtest_2015-09-30.csv
+la---          17/06/2026    14:03           1949 2015_2016_backtest_2015-12-31.csv
+la---          17/06/2026    14:04           1942 2015_2016_backtest_2016-03-31.csv
+la---          17/06/2026    14:06           1956 2015_2016_backtest_2016-05-01.csv
+la---          17/06/2026    14:08           1986 2016_2017_backtest_2016-09-30.csv
+la---          17/06/2026    14:10           1896 2016_2017_backtest_2016-12-31.csv
+la---          17/06/2026    14:12           1984 2016_2017_backtest_2017-03-31.csv
+la---          17/06/2026    14:14           1953 2016_2017_backtest_2017-05-01.csv
+la---          17/06/2026    14:16           1890 2017_2018_backtest_2017-09-30.csv
+la---          17/06/2026    14:18           1915 2017_2018_backtest_2017-12-31.csv
+la---          17/06/2026    14:20           1964 2017_2018_backtest_2018-03-31.csv
+la---          17/06/2026    14:22           1988 2017_2018_backtest_2018-05-01.csv
+la---          17/06/2026    14:24           1938 2018_2019_backtest_2018-09-30.csv
+la---          17/06/2026    14:26           1973 2018_2019_backtest_2018-12-31.csv
+la---          17/06/2026    14:28           1955 2018_2019_backtest_2019-03-31.csv
+la---          17/06/2026    14:29           1918 2018_2019_backtest_2019-05-01.csv
+la---          17/06/2026    14:32           1982 2019_2020_backtest_2019-09-30.csv
+la---          17/06/2026    14:34           1963 2019_2020_backtest_2019-12-31.csv
+la---          17/06/2026    14:36           1891 2019_2020_backtest_2020-03-31.csv
+la---          17/06/2026    14:37           1891 2019_2020_backtest_2020-05-01.csv
+la---          17/06/2026    14:40           1943 2021_2022_backtest_2021-09-30.csv
+la---          17/06/2026    14:42           1985 2021_2022_backtest_2021-12-31.csv
+la---          17/06/2026    14:44           1948 2021_2022_backtest_2022-03-31.csv
+la---          17/06/2026    14:45           1994 2021_2022_backtest_2022-05-01.csv
+la---          17/06/2026    14:48           1898 2022_2023_backtest_2022-09-30.csv
+la---          17/06/2026    14:50           1875 2022_2023_backtest_2022-12-31.csv
+la---          17/06/2026    14:52           1965 2022_2023_backtest_2023-03-31.csv
+la---          17/06/2026    14:53           1962 2022_2023_backtest_2023-05-01.csv
+la---          17/06/2026    14:56           1905 2023_2024_backtest_2023-09-30.csv
+la---          17/06/2026    14:58           1889 2023_2024_backtest_2023-12-31.csv
+la---          17/06/2026    15:00           1979 2023_2024_backtest_2024-03-31.csv
+la---          17/06/2026    15:01           1929 2023_2024_backtest_2024-05-01.csv
+la---          17/06/2026    15:01           6015 backtest_summary_2010_2011_to_2023_2024.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\backtests\laliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    15:04           2031 2010_2011_backtest_2010-09-30.csv
+la---          17/06/2026    15:06           1901 2010_2011_backtest_2010-12-31.csv
+la---          17/06/2026    15:08           1924 2010_2011_backtest_2011-03-31.csv
+la---          17/06/2026    15:09           1945 2010_2011_backtest_2011-05-01.csv
+la---          17/06/2026    15:12           2000 2011_2012_backtest_2011-09-30.csv
+la---          17/06/2026    15:14           1979 2011_2012_backtest_2011-12-31.csv
+la---          17/06/2026    15:16           1987 2011_2012_backtest_2012-03-31.csv
+la---          17/06/2026    15:17           1989 2011_2012_backtest_2012-05-01.csv
+la---          17/06/2026    15:20           1935 2012_2013_backtest_2012-09-30.csv
+la---          17/06/2026    15:22           2000 2012_2013_backtest_2012-12-31.csv
+la---          17/06/2026    15:24           1942 2012_2013_backtest_2013-03-31.csv
+la---          17/06/2026    15:25           1981 2012_2013_backtest_2013-05-01.csv
+la---          17/06/2026    15:28           1952 2013_2014_backtest_2013-09-30.csv
+la---          17/06/2026    15:30           1914 2013_2014_backtest_2013-12-31.csv
+la---          17/06/2026    15:32           1929 2013_2014_backtest_2014-03-31.csv
+la---          17/06/2026    15:33           1876 2013_2014_backtest_2014-05-01.csv
+la---          17/06/2026    15:36           1975 2014_2015_backtest_2014-09-30.csv
+la---          17/06/2026    15:38           1907 2014_2015_backtest_2014-12-31.csv
+la---          17/06/2026    15:40           1941 2014_2015_backtest_2015-03-31.csv
+la---          17/06/2026    15:41           1873 2014_2015_backtest_2015-05-01.csv
+la---          17/06/2026    15:44           1947 2015_2016_backtest_2015-09-30.csv
+la---          17/06/2026    15:46           1946 2015_2016_backtest_2015-12-31.csv
+la---          17/06/2026    15:48           1985 2015_2016_backtest_2016-03-31.csv
+la---          17/06/2026    15:49           1941 2015_2016_backtest_2016-05-01.csv
+la---          17/06/2026    15:52           1876 2016_2017_backtest_2016-09-30.csv
+la---          17/06/2026    15:54           1913 2016_2017_backtest_2016-12-31.csv
+la---          17/06/2026    15:56           1943 2016_2017_backtest_2017-03-31.csv
+la---          17/06/2026    15:57           1941 2016_2017_backtest_2017-05-01.csv
+la---          17/06/2026    16:00           1871 2017_2018_backtest_2017-09-30.csv
+la---          17/06/2026    16:02           1966 2017_2018_backtest_2017-12-31.csv
+la---          17/06/2026    16:04           1887 2017_2018_backtest_2018-03-31.csv
+la---          17/06/2026    16:05           1928 2017_2018_backtest_2018-05-01.csv
+la---          17/06/2026    16:08           1967 2018_2019_backtest_2018-09-30.csv
+la---          17/06/2026    16:10           1967 2018_2019_backtest_2018-12-31.csv
+la---          17/06/2026    16:12           1986 2018_2019_backtest_2019-03-31.csv
+la---          17/06/2026    16:13           1910 2018_2019_backtest_2019-05-01.csv
+la---          17/06/2026    16:16           1951 2019_2020_backtest_2019-09-30.csv
+la---          17/06/2026    16:18           1963 2019_2020_backtest_2019-12-31.csv
+la---          17/06/2026    16:20           1921 2019_2020_backtest_2020-03-31.csv
+la---          17/06/2026    16:21           1921 2019_2020_backtest_2020-05-01.csv
+la---          17/06/2026    16:24           1953 2021_2022_backtest_2021-09-30.csv
+la---          17/06/2026    16:26           1987 2021_2022_backtest_2021-12-31.csv
+la---          17/06/2026    16:28           1902 2021_2022_backtest_2022-03-31.csv
+la---          17/06/2026    16:29           1898 2021_2022_backtest_2022-05-01.csv
+la---          17/06/2026    16:32           1872 2022_2023_backtest_2022-09-30.csv
+la---          17/06/2026    16:34           1912 2022_2023_backtest_2022-12-31.csv
+la---          17/06/2026    16:36           1956 2022_2023_backtest_2023-03-31.csv
+la---          17/06/2026    16:37           1980 2022_2023_backtest_2023-05-01.csv
+la---          17/06/2026    16:40           1962 2023_2024_backtest_2023-09-30.csv
+la---          17/06/2026    16:42           1875 2023_2024_backtest_2023-12-31.csv
+la---          17/06/2026    16:44           1936 2023_2024_backtest_2024-03-31.csv
+la---          17/06/2026    16:45           1967 2023_2024_backtest_2024-05-01.csv
+la---          17/06/2026    16:45           6135 backtest_summary_2010_2011_to_2023_2024.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\backtests\ligue_1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    18:14           1966 2010_2011_backtest_2010-09-30.csv
+la---          17/06/2026    18:16           1941 2010_2011_backtest_2010-12-31.csv
+la---          17/06/2026    18:18           1956 2010_2011_backtest_2011-03-31.csv
+la---          17/06/2026    18:20           1966 2010_2011_backtest_2011-05-01.csv
+la---          17/06/2026    18:22           1951 2011_2012_backtest_2011-09-30.csv
+la---          17/06/2026    18:24           1921 2011_2012_backtest_2011-12-31.csv
+la---          17/06/2026    18:26           1984 2011_2012_backtest_2012-03-31.csv
+la---          17/06/2026    18:28           1934 2011_2012_backtest_2012-05-01.csv
+la---          17/06/2026    18:30           1829 2012_2013_backtest_2012-09-30.csv
+la---          17/06/2026    18:32           1980 2012_2013_backtest_2012-12-31.csv
+la---          17/06/2026    18:34           1982 2012_2013_backtest_2013-03-31.csv
+la---          17/06/2026    18:35           1934 2012_2013_backtest_2013-05-01.csv
+la---          17/06/2026    18:38           1884 2013_2014_backtest_2013-09-30.csv
+la---          17/06/2026    18:40           1937 2013_2014_backtest_2013-12-31.csv
+la---          17/06/2026    18:42           1971 2013_2014_backtest_2014-03-31.csv
+la---          17/06/2026    18:43           1941 2013_2014_backtest_2014-05-01.csv
+la---          17/06/2026    18:46           1937 2014_2015_backtest_2014-09-30.csv
+la---          17/06/2026    18:48           1963 2014_2015_backtest_2014-12-31.csv
+la---          17/06/2026    18:49           1976 2014_2015_backtest_2015-03-31.csv
+la---          17/06/2026    18:51           1935 2014_2015_backtest_2015-05-01.csv
+la---          17/06/2026    18:53           1932 2015_2016_backtest_2015-09-30.csv
+la---          17/06/2026    18:56           1937 2015_2016_backtest_2015-12-31.csv
+la---          17/06/2026    18:57           1959 2015_2016_backtest_2016-03-31.csv
+la---          17/06/2026    18:59           1959 2015_2016_backtest_2016-05-01.csv
+la---          17/06/2026    19:01           1911 2016_2017_backtest_2016-09-30.csv
+la---          17/06/2026    19:03           1939 2016_2017_backtest_2016-12-31.csv
+la---          17/06/2026    19:05           1960 2016_2017_backtest_2017-03-31.csv
+la---          17/06/2026    19:07           1914 2016_2017_backtest_2017-05-01.csv
+la---          17/06/2026    19:09           1929 2017_2018_backtest_2017-09-30.csv
+la---          17/06/2026    19:11           1939 2017_2018_backtest_2017-12-31.csv
+la---          17/06/2026    19:13           1924 2017_2018_backtest_2018-03-31.csv
+la---          17/06/2026    19:15           1887 2017_2018_backtest_2018-05-01.csv
+la---          17/06/2026    19:17           1865 2018_2019_backtest_2018-09-30.csv
+la---          17/06/2026    19:19           1928 2018_2019_backtest_2018-12-31.csv
+la---          17/06/2026    19:21           1897 2018_2019_backtest_2019-03-31.csv
+la---          17/06/2026    19:22           1919 2018_2019_backtest_2019-05-01.csv
+la---          17/06/2026    19:25           1843 2021_2022_backtest_2021-09-30.csv
+la---          17/06/2026    19:27           1940 2021_2022_backtest_2021-12-31.csv
+la---          17/06/2026    19:29           1865 2021_2022_backtest_2022-03-31.csv
+la---          17/06/2026    19:30           1941 2021_2022_backtest_2022-05-01.csv
+la---          17/06/2026    19:33           1889 2022_2023_backtest_2022-09-30.csv
+la---          17/06/2026    19:35           1846 2022_2023_backtest_2022-12-31.csv
+la---          17/06/2026    19:37           1927 2022_2023_backtest_2023-03-31.csv
+la---          17/06/2026    19:38           1898 2022_2023_backtest_2023-05-01.csv
+la---          17/06/2026    19:40           1763 2023_2024_backtest_2023-09-30.csv
+la---          17/06/2026    19:42           1721 2023_2024_backtest_2023-12-31.csv
+la---          17/06/2026    19:43           1741 2023_2024_backtest_2024-03-31.csv
+la---          17/06/2026    19:45           1767 2023_2024_backtest_2024-05-01.csv
+la---          17/06/2026    19:45           5532 backtest_summary_2010_2011_to_2023_2024.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\backtests\serie_a
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    19:47           1879 2010_2011_backtest_2010-09-30.csv
+la---          17/06/2026    19:49           1991 2010_2011_backtest_2010-12-31.csv
+la---          17/06/2026    19:51           1917 2010_2011_backtest_2011-03-31.csv
+la---          17/06/2026    19:53           1878 2010_2011_backtest_2011-05-01.csv
+la---          17/06/2026    19:55           1921 2011_2012_backtest_2011-09-30.csv
+la---          17/06/2026    19:57           1922 2011_2012_backtest_2011-12-31.csv
+la---          17/06/2026    19:59           1881 2011_2012_backtest_2012-03-31.csv
+la---          17/06/2026    20:01           1939 2011_2012_backtest_2012-05-01.csv
+la---          17/06/2026    20:03           1838 2012_2013_backtest_2012-09-30.csv
+la---          17/06/2026    20:05           1832 2012_2013_backtest_2012-12-31.csv
+la---          17/06/2026    20:07           1903 2012_2013_backtest_2013-03-31.csv
+la---          17/06/2026    20:09           1891 2012_2013_backtest_2013-05-01.csv
+la---          17/06/2026    20:11           1918 2013_2014_backtest_2013-09-30.csv
+la---          17/06/2026    20:13           1944 2013_2014_backtest_2013-12-31.csv
+la---          17/06/2026    20:15           1874 2013_2014_backtest_2014-03-31.csv
+la---          17/06/2026    20:17           1948 2013_2014_backtest_2014-05-01.csv
+la---          17/06/2026    20:21           1863 2014_2015_backtest_2014-09-30.csv
+la---          17/06/2026    20:24           1969 2014_2015_backtest_2014-12-31.csv
+la---          17/06/2026    20:27           1906 2014_2015_backtest_2015-03-31.csv
+la---          17/06/2026    20:30           1949 2014_2015_backtest_2015-05-01.csv
+la---          17/06/2026    20:34           1930 2015_2016_backtest_2015-09-30.csv
+la---          17/06/2026    20:37           1921 2015_2016_backtest_2015-12-31.csv
+la---          17/06/2026    20:40           1950 2015_2016_backtest_2016-03-31.csv
+la---          17/06/2026    20:42           1915 2015_2016_backtest_2016-05-01.csv
+la---          17/06/2026    20:46           1932 2016_2017_backtest_2016-09-30.csv
+la---          17/06/2026    20:49           1946 2016_2017_backtest_2016-12-31.csv
+la---          17/06/2026    20:52           1910 2016_2017_backtest_2017-03-31.csv
+la---          17/06/2026    20:54           1918 2016_2017_backtest_2017-05-01.csv
+la---          17/06/2026    20:58           1879 2017_2018_backtest_2017-09-30.csv
+la---          17/06/2026    21:02           1884 2017_2018_backtest_2017-12-31.csv
+la---          17/06/2026    21:04           1890 2017_2018_backtest_2018-03-31.csv
+la---          17/06/2026    21:07           1944 2017_2018_backtest_2018-05-01.csv
+la---          17/06/2026    21:11           1889 2018_2019_backtest_2018-09-30.csv
+la---          17/06/2026    21:14           1908 2018_2019_backtest_2018-12-31.csv
+la---          17/06/2026    21:17           1895 2018_2019_backtest_2019-03-31.csv
+la---          17/06/2026    21:19           1944 2018_2019_backtest_2019-05-01.csv
+la---          17/06/2026    21:23           1881 2019_2020_backtest_2019-09-30.csv
+la---          17/06/2026    21:26           1865 2019_2020_backtest_2019-12-31.csv
+la---          17/06/2026    21:29           1929 2019_2020_backtest_2020-03-31.csv
+la---          17/06/2026    21:32           1929 2019_2020_backtest_2020-05-01.csv
+la---          17/06/2026    21:36           1888 2021_2022_backtest_2021-09-30.csv
+la---          17/06/2026    21:39           1849 2021_2022_backtest_2021-12-31.csv
+la---          17/06/2026    21:41           1930 2021_2022_backtest_2022-03-31.csv
+la---          17/06/2026    21:44           1951 2021_2022_backtest_2022-05-01.csv
+la---          17/06/2026    21:48           1856 2022_2023_backtest_2022-09-30.csv
+la---          17/06/2026    21:52           1956 2022_2023_backtest_2022-12-31.csv
+la---          17/06/2026    21:54           1890 2022_2023_backtest_2023-03-31.csv
+la---          17/06/2026    21:57           1883 2022_2023_backtest_2023-05-01.csv
+la---          17/06/2026    22:01           1804 2023_2024_backtest_2023-09-30.csv
+la---          17/06/2026    22:04           1845 2023_2024_backtest_2023-12-31.csv
+la---          17/06/2026    22:07           1876 2023_2024_backtest_2024-03-31.csv
+la---          17/06/2026    22:09           1914 2023_2024_backtest_2024-05-01.csv
+la---          17/06/2026    22:09           5854 backtest_summary_2010_2011_to_2023_2024.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    01:14                bundesliga
+lar--          16/06/2026    01:02                epl
+lar--          16/06/2026    01:08                laliga
+lar--          16/06/2026    01:19                ligue_1
+lar--          16/06/2026    01:24                serie_a
+la---          15/06/2026    16:52          45867 Aston_Villa_vs_Nott'm_Forest.png
+la---          15/06/2026    16:52          50241 Bournemouth_vs_Arsenal.png
+la---          15/06/2026    16:52          50725 Brentford_vs_Tottenham.png
+la---          15/06/2026    16:52          50780 Brighton_vs_Burnley.png
+la---          15/06/2026    16:52          45648 Crystal_Palace_vs_Fulham.png
+la---          15/06/2026    16:52          55737 Everton_vs_Brentford.png
+la---          15/06/2026    16:52          48625 Fulham_vs_Liverpool.png
+la---          15/06/2026    16:52          53484 Leeds_vs_Man_United.png
+la---          15/06/2026    16:52          53766 Liverpool_vs_Leeds.png
+la---          15/06/2026    16:52          58740 Man_City_vs_Chelsea.png
+la---          15/06/2026    16:52          53069 Newcastle_vs_Crystal_Palace.png
+la---          15/06/2026    16:52         167620 premier_league_2025-26_fixtures_1-4_jan_2026.png
+la---          15/06/2026    16:52         179809 premier_league_2025-26_forecast.png
+la---          15/06/2026    16:52          55959 Sunderland_vs_Man_City.png
+la---          15/06/2026    16:52          47631 Tottenham_vs_Sunderland.png
+la---          15/06/2026    16:52          47623 Wolves_vs_West_Ham.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\bundesliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    01:16                bundesliga_31-12-2025
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\bundesliga\bundesliga_31-12-2025
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    12:57          35061 Bayern_Munich_vs_Wolfsburg.png
+la---          17/06/2026    12:57          87203 bundesliga_2025-26_fixtures_9-13_jan_2026.png
+la---          17/06/2026    12:57         136468 bundesliga_2025-26_forecast.png
+la---          17/06/2026    12:57          32982 Dortmund_vs_Werder_Bremen.png
+la---          17/06/2026    12:57          32742 Ein_Frankfurt_vs_Dortmund.png
+la---          17/06/2026    12:57          31753 Freiburg_vs_Hamburg.png
+la---          17/06/2026    12:57          31372 Heidenheim_vs_FC_Koln.png
+la---          17/06/2026    12:57          32900 Leverkusen_vs_Stuttgart.png
+la---          17/06/2026    12:57          32556 M'gladbach_vs_Augsburg.png
+la---          17/06/2026    12:57          31631 Mainz_vs_Heidenheim.png
+la---          17/06/2026    12:57          32418 Stuttgart_vs_Ein_Frankfurt.png
+la---          17/06/2026    12:57          32172 Union_Berlin_vs_Mainz.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\epl
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    01:04                epl_31-12-2025
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\epl\epl_31-12-2025
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    12:45          45867 Aston_Villa_vs_Nott'm_Forest.png
+la---          17/06/2026    12:45          50241 Bournemouth_vs_Arsenal.png
+la---          17/06/2026    12:45          50725 Brentford_vs_Tottenham.png
+la---          17/06/2026    12:45          50780 Brighton_vs_Burnley.png
+la---          17/06/2026    12:45          45648 Crystal_Palace_vs_Fulham.png
+la---          17/06/2026    12:45          55737 Everton_vs_Brentford.png
+la---          17/06/2026    12:45          48625 Fulham_vs_Liverpool.png
+la---          17/06/2026    12:45          53484 Leeds_vs_Man_United.png
+la---          17/06/2026    12:45          53766 Liverpool_vs_Leeds.png
+la---          17/06/2026    12:45          58740 Man_City_vs_Chelsea.png
+la---          17/06/2026    12:45          53069 Newcastle_vs_Crystal_Palace.png
+la---          17/06/2026    12:45         167620 premier_league_2025-26_fixtures_1-4_jan_2026.png
+la---          17/06/2026    12:45         182212 premier_league_2025-26_forecast.png
+la---          17/06/2026    12:45          55959 Sunderland_vs_Man_City.png
+la---          17/06/2026    12:45          47631 Tottenham_vs_Sunderland.png
+la---          17/06/2026    12:45          47623 Wolves_vs_West_Ham.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\laliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    01:11                laliga_31-12-2025
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\laliga\laliga_31-12-2025
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    12:51          31014 Alaves_vs_Oviedo.png
+la---          17/06/2026    12:51          30348 Celta_vs_Valencia.png
+la---          17/06/2026    12:51          29851 Elche_vs_Villarreal.png
+la---          17/06/2026    12:51          30936 Espanol_vs_Barcelona.png
+la---          17/06/2026    12:51          81211 la_liga_2025-26_fixtures_2-4_jan_2026.png
+la---          17/06/2026    12:51         143731 la_liga_2025-26_forecast.png
+la---          17/06/2026    12:51          29746 Mallorca_vs_Girona.png
+la---          17/06/2026    12:51          30921 Osasuna_vs_Ath_Bilbao.png
+la---          17/06/2026    12:51          31246 Real_Madrid_vs_Betis.png
+la---          17/06/2026    12:51          29632 Sevilla_vs_Levante.png
+la---          17/06/2026    12:51          30559 Sociedad_vs_Ath_Madrid.png
+la---          17/06/2026    12:51          30288 Vallecano_vs_Getafe.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\ligue_1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    01:21                ligue_1_31-12-2025
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\ligue_1\ligue_1_31-12-2025
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    13:02          30331 Brest_vs_Auxerre.png
+la---          17/06/2026    13:02          30015 Le_Havre_vs_Angers.png
+la---          17/06/2026    13:02          71983 ligue_1_2025-26_fixtures_2-4_jan_2026.png
+la---          17/06/2026    13:02         126229 ligue_1_2025-26_forecast.png
+la---          17/06/2026    13:02          29803 Lille_vs_Rennes.png
+la---          17/06/2026    13:02          30047 Lorient_vs_Metz.png
+la---          17/06/2026    13:02          30876 Marseille_vs_Nantes.png
+la---          17/06/2026    13:02          30317 Monaco_vs_Lyon.png
+la---          17/06/2026    13:02          32226 Nice_vs_Strasbourg.png
+la---          17/06/2026    13:02          31414 Paris_SG_vs_Paris_FC.png
+la---          17/06/2026    13:02          29073 Toulouse_vs_Lens.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\serie_a
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    01:27                serie_a_31-12-2025
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\cards\serie_a\serie_a_31-12-2025
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    13:09          29969 Atalanta_vs_Roma.png
+la---          17/06/2026    13:09          30883 Cagliari_vs_Milan.png
+la---          17/06/2026    13:09          31171 Como_vs_Udinese.png
+la---          17/06/2026    13:09          31052 Fiorentina_vs_Cremonese.png
+la---          17/06/2026    13:09          29915 Genoa_vs_Pisa.png
+la---          17/06/2026    13:09          30533 Inter_vs_Bologna.png
+la---          17/06/2026    13:09          31144 Juventus_vs_Lecce.png
+la---          17/06/2026    13:09          29289 Lazio_vs_Napoli.png
+la---          17/06/2026    13:09          30327 Lecce_vs_Roma.png
+la---          17/06/2026    13:09          29849 Pisa_vs_Como.png
+la---          17/06/2026    13:09          30327 Sassuolo_vs_Juventus.png
+la---          17/06/2026    13:09          30259 Sassuolo_vs_Parma.png
+la---          17/06/2026    13:09          96809 serie_a_2025-26_fixtures_2-6_jan_2026.png
+la---          17/06/2026    13:09         134642 serie_a_2025-26_forecast.png
+la---          17/06/2026    13:09          30418 Verona_vs_Torino.png
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\tables
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    01:14                bundesliga
+lar--          16/06/2026    01:02                epl
+lar--          16/06/2026    01:08                laliga
+lar--          16/06/2026    01:19                ligue_1
+lar--          16/06/2026    01:24                serie_a
+la---          01/06/2026    20:05            648 epl_2025_2026_actual_table_as_of_2025-09-01.csv
+la---          02/06/2026    11:51            739 epl_2025_2026_actual_table_as_of_2025-12-31.csv
+la---          01/06/2026    22:23            774 epl_2025_2026_actual_table_as_of_2026-04-30.csv
+la---          01/06/2026    22:26            778 epl_2025_2026_actual_table_as_of_2026-05-15.csv
+la---          02/06/2026    19:01            784 epl_2025_2026_actual_table_as_of_2026-05-31.csv
+la---          01/06/2026    13:54          59402 epl_2025_2026_fixture_predictions.csv
+la---          01/06/2026    18:37           1332 epl_2025_2026_forecast.csv
+la---          01/06/2026    20:05           1349 epl_2025_2026_live_forecast_as_of_2025-09-01.csv
+la---          02/06/2026    11:51           1363 epl_2025_2026_live_forecast_as_of_2025-12-31.csv
+la---          01/06/2026    22:23           1311 epl_2025_2026_live_forecast_as_of_2026-04-30.csv
+la---          01/06/2026    22:26           1311 epl_2025_2026_live_forecast_as_of_2026-05-15.csv
+la---          02/06/2026    19:01           1243 epl_2025_2026_live_forecast_as_of_2026-05-31.csv
+la---          01/06/2026    20:05           4831 epl_2025_2026_live_strength_as_of_2025-09-01.csv
+la---          02/06/2026    11:51          10436 epl_2025_2026_live_strength_as_of_2025-12-31.csv
+la---          01/06/2026    22:23           4539 epl_2025_2026_live_strength_as_of_2026-04-30.csv
+la---          01/06/2026    22:26           4552 epl_2025_2026_live_strength_as_of_2026-05-15.csv
+la---          02/06/2026    19:01          10886 epl_2025_2026_live_strength_as_of_2026-05-31.csv
+la---          01/06/2026    18:37          52236 epl_2025_2026_poisson_fixture_predictions.csv
+la---          01/06/2026    18:37           1624 epl_2025_2026_poisson_simulation_summary.csv
+la---          01/06/2026    17:14        5925723 epl_2025_2026_simulation_results.csv
+la---          01/06/2026    17:14           1068 epl_2025_2026_simulation_summary.csv
+la---          01/06/2026    18:37           4251 epl_2025_2026_strength_table.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\tables\bundesliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    12:54            685 bundesliga_2025_2026_actual_table_as_of_2025-12-31.csv
+la---          17/06/2026    12:54           1253 bundesliga_2025_2026_live_forecast_as_of_2025-12-31.csv
+la---          17/06/2026    12:54          10670 bundesliga_2025_2026_live_strength_as_of_2025-12-31.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\tables\epl
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    12:42            739 epl_2025_2026_actual_table_as_of_2025-12-31.csv
+la---          17/06/2026    12:42           1362 epl_2025_2026_live_forecast_as_of_2025-12-31.csv
+la---          17/06/2026    12:42          11942 epl_2025_2026_live_strength_as_of_2025-12-31.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\tables\laliga
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    12:48            721 laliga_2025_2026_actual_table_as_of_2025-12-31.csv
+la---          16/06/2026    00:36            766 laliga_2025_2026_actual_table_as_of_2026-05-31.csv
+la---          17/06/2026    12:48           1347 laliga_2025_2026_live_forecast_as_of_2025-12-31.csv
+la---          16/06/2026    00:36           1225 laliga_2025_2026_live_forecast_as_of_2026-05-31.csv
+la---          17/06/2026    12:48          11887 laliga_2025_2026_live_strength_as_of_2025-12-31.csv
+la---          16/06/2026    00:36          10922 laliga_2025_2026_live_strength_as_of_2026-05-31.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\tables\ligue_1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    13:00            633 ligue_1_2025_2026_actual_table_as_of_2025-12-31.csv
+la---          17/06/2026    13:00           1190 ligue_1_2025_2026_live_forecast_as_of_2025-12-31.csv
+la---          17/06/2026    13:00           9889 ligue_1_2025_2026_live_strength_as_of_2025-12-31.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\outputs\tables\serie_a
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          17/06/2026    13:06            695 serie_a_2025_2026_actual_table_as_of_2025-12-31.csv
+la---          17/06/2026    13:06           1316 serie_a_2025_2026_live_forecast_as_of_2025-12-31.csv
+la---          17/06/2026    13:06          11256 serie_a_2025_2026_live_strength_as_of_2025-12-31.csv
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    06:48                analytics
+lar--          02/06/2026    12:10                backtest
+lar--          15/06/2026    23:50                config
+lar--          02/06/2026    18:50                data
+lar--          15/06/2026    11:59                evaluation
+lar--          15/06/2026    14:59                live
+lar--          02/06/2026    16:18                models
+lar--          01/06/2026    13:39                simulation
+lar--          01/06/2026    12:59                utils
+lar--          19/06/2026    09:44                visualization
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\analytics
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    09:45                __pycache__
+la---          19/06/2026    06:27              0 __init__.py
+la---          19/06/2026    06:46           2647 attacking.py
+la---          19/06/2026    08:44           2687 comebacks.py
+la---          19/06/2026    07:43           2035 defensive.py
+la---          19/06/2026    08:04           1571 discipline.py
+la---          19/06/2026    08:57           4547 form.py
+la---          19/06/2026    08:38           2917 home_away.py
+la---          19/06/2026    09:04           1320 over_under.py
+la---          19/06/2026    09:43           8343 referee.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\analytics\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    06:48            180 __init__.cpython-313.pyc
+la---          19/06/2026    06:48           3461 attacking.cpython-313.pyc
+la---          19/06/2026    08:45           3006 comebacks.cpython-313.pyc
+la---          19/06/2026    07:43           2677 defensive.cpython-313.pyc
+la---          19/06/2026    08:04           2286 discipline.cpython-313.pyc
+la---          19/06/2026    09:04           6612 form.cpython-313.pyc
+la---          19/06/2026    08:38           3452 home_away.cpython-313.pyc
+la---          19/06/2026    09:04           1841 over_under.cpython-313.pyc
+la---          19/06/2026    09:45          10092 referee.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\backtest
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          02/06/2026    12:10                __pycache__
+la---          02/06/2026    12:07           4936 backtest_season.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\backtest\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          02/06/2026    12:10           4992 backtest_season.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\config
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    00:43                __pycache__
+la---          16/06/2026    00:41           3284 league_config.py
+la---          02/06/2026    17:13           2794 season_config.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\config\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          16/06/2026    00:43           3084 league_config.cpython-313.pyc
+la---          02/06/2026    17:18           4114 season_config.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\data
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          16/06/2026    00:17                __pycache__
+la---          01/06/2026    13:12           3030 download_historical_data.py
+la---          01/06/2026    12:59              0 load_data.py
+la---          19/06/2026    07:56           3866 preprocess.py
+la---          20/06/2026    17:35           3411 update_data.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\data\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          15/06/2026    23:58           6253 preprocess.cpython-313.pyc
+la---          16/06/2026    00:17           4636 update_data.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\evaluation
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          15/06/2026    12:00                __pycache__
+la---          15/06/2026    11:16              0 __init__.py
+la---          15/06/2026    11:33           6094 calibration.py
+la---          15/06/2026    11:03           9060 prediction_metrics.py
+la---          15/06/2026    11:34           6254 promoted_team_diagnostic.py
+la---          15/06/2026    11:59           7506 tune_promoted_constants.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\evaluation\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          15/06/2026    11:18            181 __init__.cpython-313.pyc
+la---          15/06/2026    11:34           7104 calibration.cpython-313.pyc
+la---          15/06/2026    11:18          11108 prediction_metrics.cpython-313.pyc
+la---          15/06/2026    11:34           7404 promoted_team_diagnostic.cpython-313.pyc
+la---          15/06/2026    12:00           8629 tune_promoted_constants.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\live
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          15/06/2026    15:02                __pycache__
+la---          02/06/2026    17:23          17024 live_forecast.py
+la---          15/06/2026    14:59           3643 matchday.py
+la---          01/06/2026    18:47           1645 season_state.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\live\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          02/06/2026    17:23          15478 live_forecast.cpython-313.pyc
+la---          15/06/2026    15:02           4409 matchday.cpython-313.pyc
+la---          01/06/2026    18:48           2473 season_state.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\models
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          17/06/2026    12:39                __pycache__
+la---          02/06/2026    11:03           7490 elo.py
+la---          01/06/2026    17:38           1325 match_predictor.py
+la---          02/06/2026    10:39           8388 poisson_model.py
+la---          02/06/2026    11:22           6259 pseudo_xg.py
+la---          01/06/2026    17:18           1415 season_ratings.py
+la---          17/06/2026    12:39           9694 strength_of_schedule.py
+la---          15/06/2026    13:03           4764 team_strength.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\models\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          02/06/2026    11:07           8591 elo.cpython-313.pyc
+la---          01/06/2026    17:39           1627 match_predictor.cpython-313.pyc
+la---          02/06/2026    10:43           9019 poisson_model.cpython-313.pyc
+la---          02/06/2026    11:29           6358 pseudo_xg.cpython-313.pyc
+la---          01/06/2026    17:19           2034 season_ratings.cpython-313.pyc
+la---          17/06/2026    12:39          11208 strength_of_schedule.cpython-313.pyc
+la---          15/06/2026    13:38           4389 team_strength.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\simulation
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          15/06/2026    15:02                __pycache__
+la---          01/06/2026    13:38           2047 league_table.py
+la---          15/06/2026    15:01           7410 monte_carlo.py
+la---          01/06/2026    18:58           2303 season_simulator.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\simulation\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          01/06/2026    13:39           3111 league_table.cpython-313.pyc
+la---          15/06/2026    15:02           8318 monte_carlo.cpython-313.pyc
+la---          01/06/2026    18:59           3308 season_simulator.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\utils
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          01/06/2026    12:59              0 config.py
+la---          01/06/2026    12:59              0 helpers.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\visualization
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+lar--          19/06/2026    10:47                __pycache__
+la---          19/06/2026    08:25           9883 analytics_card.py
+la---          15/06/2026    23:37          29242 card.py
+la---          19/06/2026    10:46          10047 referee_card.py
+la---          16/06/2026    00:43          15190 team_colors.py
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\src\visualization\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          19/06/2026    08:26          11576 analytics_card.cpython-313.pyc
+la---          16/06/2026    00:43          31027 card.cpython-313.pyc
+la---          19/06/2026    10:47          11818 referee_card.cpython-313.pyc
+la---          16/06/2026    00:43          14117 team_colors.cpython-313.pyc
+
+    Directory: C:\Users\ellyo\OneDrive\Work\X\Automation\sportsAnalytics\__pycache__
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---          16/06/2026    09:54           5601 backtest.cpython-313.pyc
+la---          16/06/2026    00:59           7862 generate_cards.cpython-313.pyc
+la---          16/06/2026    00:59           4455 main.cpython-313.pyc
+

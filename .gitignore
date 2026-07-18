@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+logs/
+
+# Generated outputs
+outputs/
+
+# Data (re-downloadable, kept local)
+data/raw/
+data/processed/
+data/logos/
+
+# --- Proprietary prediction engine (kept private) ---
+src/models/
+src/simulation/
+src/evaluation/calibration.py
+src/evaluation/tune_promoted_constants.py
+
+# OS
+.DS_Store
+Thumbs.db
