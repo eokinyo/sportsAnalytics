@@ -15,6 +15,10 @@ Pillow-based forecast cards:
         A single fixture, with team logos, predicted scoreline,
         expected goals, and a larger Home/Draw/Away outcome bar.
 
+  - create_result_card:
+        A played fixture, showing the prediction alongside the actual
+        result and the probability the model gave the outcome.
+
 Data sources (see src/simulation/monte_carlo.py and src/live/matchday.py):
 
   - table_df for create_season_forecast_card should come from
@@ -180,6 +184,64 @@ class CardGenerator:
                     best = (h, a)
 
         return best
+
+    @staticmethod
+    def _outcome_of(home_goals: int, away_goals: int) -> str:
+        if home_goals > away_goals:
+            return "H"
+        if home_goals < away_goals:
+            return "A"
+        return "D"
+
+    def _outcome_consistent_scoreline(
+        self,
+        home_xg: float,
+        away_xg: float,
+        outcome: str | None = None,
+        max_goals: int = 8,
+    ) -> tuple[int, int]:
+        """
+        Most likely scoreline within the predicted outcome.
+
+        The unconditional mode is usually 1-1, because a draw is one
+        concentrated cell while a home win is spread across many. Showing
+        that alongside a home-win call reads as a contradiction, so the
+        scoreline is conditioned on the outcome being called.
+        """
+        grid = {
+            (h, a): self._poisson_pmf(h, home_xg) * self._poisson_pmf(a, away_xg)
+            for h in range(max_goals + 1)
+            for a in range(max_goals + 1)
+        }
+
+        if outcome is None:
+            totals = {"H": 0.0, "D": 0.0, "A": 0.0}
+            for (h, a), p in grid.items():
+                totals[self._outcome_of(h, a)] += p
+            outcome = max(totals, key=totals.get)
+
+        candidates = {
+            k: v for k, v in grid.items()
+            if self._outcome_of(k[0], k[1]) == outcome
+        }
+
+        if not candidates:
+            candidates = grid
+
+        return max(candidates, key=candidates.get)
+
+    @staticmethod
+    def _fixture_outcome(fixture) -> str | None:
+        """Outcome the model calls, from the fixture's own probabilities."""
+        try:
+            probs = {
+                "H": float(fixture["HomeWinProb"]),
+                "D": float(fixture["DrawProb"]),
+                "A": float(fixture["AwayWinProb"]),
+            }
+        except (KeyError, TypeError, ValueError):
+            return None
+        return max(probs, key=probs.get)
 
     @staticmethod
     def _format_date(value) -> str:
@@ -739,13 +801,12 @@ class CardGenerator:
             fill=self.COLOR_TEXT, font=self.font_medium, anchor="mm",
         )
 
-        # Predicted scoreline
-        home_goals, away_goals = self._predicted_scoreline(
-            fixture["HomeExpectedGoals"], fixture["AwayExpectedGoals"]
-        )
-
-        ml_home_goals, ml_away_goals = self._most_likely_scoreline(
-            fixture["HomeExpectedGoals"], fixture["AwayExpectedGoals"]
+        # Predicted scoreline - a single figure, conditioned on the
+        # outcome the model calls, so the score and the H/D/A bar agree.
+        home_goals, away_goals = self._outcome_consistent_scoreline(
+            fixture["HomeExpectedGoals"],
+            fixture["AwayExpectedGoals"],
+            outcome=self._fixture_outcome(fixture),
         )
 
         draw.text(
@@ -754,11 +815,6 @@ class CardGenerator:
         )
         draw.text(
             (width // 2, center_y + 50), "Predicted Score",
-            fill=self.COLOR_SUBTEXT, font=self.font_tiny, anchor="mm",
-        )
-        draw.text(
-            (width // 2, center_y + 78),
-            f"Most Likely Score: {ml_home_goals}-{ml_away_goals}",
             fill=self.COLOR_SUBTEXT, font=self.font_tiny, anchor="mm",
         )
 
@@ -808,4 +864,180 @@ class CardGenerator:
         card.save(save_path, dpi=(240, 240))
 
         logger.info(f"Match detail card saved: {save_path}")
+        return str(save_path)
+
+    # ------------------------------------------------------------
+    # Result card (prediction vs actual)
+    # ------------------------------------------------------------
+
+    def create_result_card(
+        self,
+        result: pd.Series | dict,
+        season: str = "2025/26",
+        league: str = "Premier League",
+        filename: str | None = None,
+    ) -> str:
+        """
+        result must contain:
+            HomeTeam, AwayTeam, HomeExpectedGoals, AwayExpectedGoals,
+            HomeWinProb, DrawProb, AwayWinProb,
+            PredictedHomeGoals, PredictedAwayGoals,
+            FTHG, FTAG, ActualOutcome, OutcomeCorrect, ScoreCorrect,
+            ProbOfActual
+        and optionally Date.
+
+        Produced by src.analytics.results.join_predictions_to_results().
+        """
+        home = result["HomeTeam"]
+        away = result["AwayTeam"]
+
+        if filename is None:
+            safe_home = home.replace(" ", "_")
+            safe_away = away.replace(" ", "_")
+            filename = f"{safe_home}_vs_{safe_away}_result.png"
+
+        pred_h = int(result["PredictedHomeGoals"])
+        pred_a = int(result["PredictedAwayGoals"])
+        act_h = int(result["FTHG"])
+        act_a = int(result["FTAG"])
+
+        outcome_correct = bool(result["OutcomeCorrect"])
+        score_correct = bool(result["ScoreCorrect"])
+        actual_outcome = result["ActualOutcome"]
+        prob_of_actual = float(result["ProbOfActual"]) * 100
+
+        width, height = 1080, 700
+        card = Image.new("RGB", (width, height), color="#FFFFFF")
+        draw = ImageDraw.Draw(card)
+
+        draw.text(
+            (width // 2, 50), f"{league} - {season}",
+            fill=self.COLOR_SUBTEXT, font=self.font_medium, anchor="mm",
+        )
+
+        date_value = result.get("Date") if hasattr(result, "get") else None
+        if date_value is not None:
+            draw.text(
+                (width // 2, 85), self._format_date(date_value),
+                fill=self.COLOR_SUBTEXT, font=self.font_small, anchor="mm",
+            )
+
+        # Team names + logos
+        center_y = 235
+        logo_size = 100
+
+        self._paste_logo(
+            card, home,
+            (width // 4 - logo_size // 2, center_y - logo_size // 2), logo_size,
+        )
+        draw.text(
+            (width // 4, center_y + logo_size // 2 + 25), home,
+            fill=self.COLOR_TEXT, font=self.font_medium, anchor="mm",
+        )
+
+        self._paste_logo(
+            card, away,
+            (3 * width // 4 - logo_size // 2, center_y - logo_size // 2), logo_size,
+        )
+        draw.text(
+            (3 * width // 4, center_y + logo_size // 2 + 25), away,
+            fill=self.COLOR_TEXT, font=self.font_medium, anchor="mm",
+        )
+
+        # Predicted scoreline (muted, above)
+        draw.text(
+            (width // 2, center_y - 62), "PREDICTED",
+            fill=self.COLOR_SUBTEXT, font=self.font_tiny, anchor="mm",
+        )
+        draw.text(
+            (width // 2, center_y - 30), f"{pred_h} - {pred_a}",
+            fill=self.COLOR_SUBTEXT, font=self.font_medium, anchor="mm",
+        )
+
+        # Actual scoreline (dominant)
+        draw.text(
+            (width // 2, center_y + 12), "FINAL SCORE",
+            fill=self.COLOR_TEXT, font=self.font_tiny, anchor="mm",
+        )
+        draw.text(
+            (width // 2, center_y + 52), f"{act_h} - {act_a}",
+            fill=self.COLOR_TEXT, font=self.font_large, anchor="mm",
+        )
+
+        # Verdict
+        if score_correct:
+            verdict = "Exact scoreline called"
+            verdict_color = "#15803D"
+        elif outcome_correct:
+            verdict = "Outcome called correctly"
+            verdict_color = "#15803D"
+        else:
+            verdict = "Outcome missed"
+            verdict_color = self.COLOR_BAR_AWAY
+
+        banner_w = 420
+        banner_h = 44
+        banner_x = (width - banner_w) // 2
+        banner_y = center_y + 118
+
+        draw.rectangle(
+            [banner_x, banner_y, banner_x + banner_w, banner_y + banner_h],
+            fill=self.COLOR_ROW_ALT, outline=verdict_color, width=2,
+        )
+        draw.text(
+            (width // 2, banner_y + banner_h // 2), verdict,
+            fill=verdict_color, font=self.font_small, anchor="mm",
+        )
+
+        # What the model said beforehand
+        prob_y = banner_y + banner_h + 46
+        draw.text(
+            (width // 2, prob_y), "What the model said beforehand",
+            fill=self.COLOR_TEXT, font=self.font_medium, anchor="mm",
+        )
+
+        bar_width = 700
+        bar_height = 32
+        bar_x = (width - bar_width) // 2
+        bar_y = prob_y + 35
+
+        home_color, away_color = get_team_colors_for_fixture(home, away)
+
+        self._draw_outcome_bar(
+            draw,
+            x=bar_x,
+            y=bar_y,
+            width=bar_width,
+            height=bar_height,
+            home_pct=result["HomeWinProb"] * 100,
+            draw_pct=result["DrawProb"] * 100,
+            away_pct=result["AwayWinProb"] * 100,
+            font=self.font_small,
+            home_color=home_color,
+            away_color=away_color,
+        )
+
+        outcome_word = {
+            "H": f"{home} win",
+            "D": "Draw",
+            "A": f"{away} win",
+        }[actual_outcome]
+
+        draw.text(
+            (width // 2, bar_y + bar_height + 46),
+            f"{outcome_word} was given {prob_of_actual:.0f}%   |   "
+            f"xG: {result['HomeExpectedGoals']:.2f} - {result['AwayExpectedGoals']:.2f}",
+            fill=self.COLOR_SUBTEXT, font=self.font_small, anchor="mm",
+        )
+
+        # Footer
+        draw.text(
+            (width - 40, height - 35), self.brand_text,
+            fill=self.COLOR_SUBTEXT, font=self.font_tiny, anchor="rm",
+        )
+
+        save_path = self.output_dir / filename
+        card.save(save_path, dpi=(240, 240))
+
+        logger.info(f"Result card saved: {save_path}")
         return str(save_path)

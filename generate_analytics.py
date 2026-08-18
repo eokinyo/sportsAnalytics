@@ -39,40 +39,30 @@ LEAGUE_CONFIG = {
         "display_name":    "Premier League",
         "data_path":       r"data\processed\epl\epl_matches_clean.csv",
         "logo_dir":        r"data\logos\epl",
-        "season":          "2025_2026",
-        "season_label":    "2025/26",
         "total_matchdays": 38,
     },
     "laliga": {
         "display_name":    "La Liga",
         "data_path":       r"data\processed\laliga\laliga_matches_clean.csv",
         "logo_dir":        r"data\logos\laliga",
-        "season":          "2025_2026",
-        "season_label":    "2025/26",
         "total_matchdays": 38,
     },
     "bundesliga": {
         "display_name":    "Bundesliga",
         "data_path":       r"data\processed\bundesliga\bundesliga_matches_clean.csv",
         "logo_dir":        r"data\logos\bundesliga",
-        "season":          "2025_2026",
-        "season_label":    "2025/26",
         "total_matchdays": 34,
     },
     "ligue_1": {
         "display_name":    "Ligue 1",
         "data_path":       r"data\processed\ligue_1\ligue_1_matches_clean.csv",
         "logo_dir":        r"data\logos\ligue_1",
-        "season":          "2025_2026",
-        "season_label":    "2025/26",
         "total_matchdays": 34,
     },
     "serie_a": {
         "display_name":    "Serie A",
         "data_path":       r"data\processed\serie_a\serie_a_matches_clean.csv",
         "logo_dir":        r"data\logos\serie_a",
-        "season":          "2025_2026",
-        "season_label":    "2025/26",
         "total_matchdays": 38,
     },
 }
@@ -160,6 +150,21 @@ def get_as_of_date() -> str:
     return datetime.now().strftime("%d %B %Y")
 
 
+def detect_season(matches: pd.DataFrame) -> str:
+    """Latest season present in the data — avoids a hardcoded constant
+    that would silently break when a new season starts."""
+    seasons = sorted(matches["Season"].dropna().unique())
+    if not seasons:
+        raise ValueError("No Season values found in match data.")
+    return seasons[-1]
+
+
+def season_label(season: str) -> str:
+    """2025_2026 -> 2025/26"""
+    start, end = season.split("_")
+    return f"{start}/{end[2:]}"
+
+
 def get_current_matchday(matches: pd.DataFrame) -> int:
     home_counts = matches.groupby("HomeTeam").size()
     away_counts = matches.groupby("AwayTeam").size()
@@ -170,11 +175,12 @@ def get_current_matchday(matches: pd.DataFrame) -> int:
     ))
 
 
-def _card_kwargs(config: dict, as_of: str, matchday: int) -> dict:
+def _card_kwargs(config: dict, as_of: str, matchday: int,
+                 season_display: str = "") -> dict:
     return dict(
         logo_dir        = config["logo_dir"],
         league_name     = config["display_name"],
-        season          = config["season_label"],
+        season          = season_display,
         as_of_date      = as_of,
         matchday        = matchday,
         total_matchdays = config["total_matchdays"],
@@ -184,12 +190,13 @@ def _card_kwargs(config: dict, as_of: str, matchday: int) -> dict:
 
 # ── Card generators ───────────────────────────────────────────────────────────
 
-def generate_attacking_cards(league_key: str, config: dict, matches: pd.DataFrame):
+def generate_attacking_cards(league_key: str, config: dict, matches: pd.DataFrame,
+                          season_display: str = ""):
     as_of    = get_as_of_date()
     matchday = get_current_matchday(matches)
     out_dir  = os.path.join("outputs", "analytics", league_key, "attacking")
     os.makedirs(out_dir, exist_ok=True)
-    kwargs   = _card_kwargs(config, as_of, matchday)
+    kwargs   = _card_kwargs(config, as_of, matchday, season_display)
 
     for m in ATTACKING_METRICS:
         ranked = m["fn"](matches)
@@ -208,12 +215,13 @@ def generate_attacking_cards(league_key: str, config: dict, matches: pd.DataFram
         print(f"  ✓ {m['card_title']}")
 
 
-def generate_defensive_cards(league_key: str, config: dict, matches: pd.DataFrame):
+def generate_defensive_cards(league_key: str, config: dict, matches: pd.DataFrame,
+                          season_display: str = ""):
     as_of    = get_as_of_date()
     matchday = get_current_matchday(matches)
     out_dir  = os.path.join("outputs", "analytics", league_key, "defensive")
     os.makedirs(out_dir, exist_ok=True)
-    kwargs   = _card_kwargs(config, as_of, matchday)
+    kwargs   = _card_kwargs(config, as_of, matchday, season_display)
 
     for m in DEFENSIVE_METRICS:
         ranked = m["fn"](matches)
@@ -232,12 +240,13 @@ def generate_defensive_cards(league_key: str, config: dict, matches: pd.DataFram
         print(f"  ✓ {m['card_title']}")
 
 
-def generate_discipline_cards(league_key: str, config: dict, matches: pd.DataFrame):
+def generate_discipline_cards(league_key: str, config: dict, matches: pd.DataFrame,
+                          season_display: str = ""):
     as_of    = get_as_of_date()
     matchday = get_current_matchday(matches)
     out_dir  = os.path.join("outputs", "analytics", league_key, "discipline")
     os.makedirs(out_dir, exist_ok=True)
-    kwargs   = _card_kwargs(config, as_of, matchday)
+    kwargs   = _card_kwargs(config, as_of, matchday, season_display)
 
     ranked = discipline_ranking(matches)
     create_analytics_card(
@@ -257,12 +266,13 @@ def generate_discipline_cards(league_key: str, config: dict, matches: pd.DataFra
     print("  ✓ Fair Play & Discipline")
 
 
-def generate_referee_cards(league_key: str, config: dict, matches: pd.DataFrame):
+def generate_referee_cards(league_key: str, config: dict, matches: pd.DataFrame,
+                          season_display: str = ""):
     as_of    = get_as_of_date()
     matchday = get_current_matchday(matches)
     out_dir  = os.path.join("outputs", "analytics", league_key, "referee")
     os.makedirs(out_dir, exist_ok=True)
-    kwargs   = _card_kwargs(config, as_of, matchday)
+    kwargs   = _card_kwargs(config, as_of, matchday, season_display)
 
     ranked = referee_strictness(matches)
     if ranked.empty:
@@ -287,12 +297,13 @@ def generate_referee_cards(league_key: str, config: dict, matches: pd.DataFrame)
     print("  ✓ Referee Strictness")
 
 
-def generate_home_away_cards(league_key: str, config: dict, matches: pd.DataFrame):
+def generate_home_away_cards(league_key: str, config: dict, matches: pd.DataFrame,
+                          season_display: str = ""):
     as_of    = get_as_of_date()
     matchday = get_current_matchday(matches)
     out_dir  = os.path.join("outputs", "analytics", league_key, "home_away")
     os.makedirs(out_dir, exist_ok=True)
-    kwargs   = _card_kwargs(config, as_of, matchday)
+    kwargs   = _card_kwargs(config, as_of, matchday, season_display)
 
     # Home fortress
     ranked = home_fortress(matches)
@@ -331,12 +342,13 @@ def generate_home_away_cards(league_key: str, config: dict, matches: pd.DataFram
     print("  ✓ Away Warriors")
 
 
-def generate_comeback_cards(league_key: str, config: dict, matches: pd.DataFrame):
+def generate_comeback_cards(league_key: str, config: dict, matches: pd.DataFrame,
+                          season_display: str = ""):
     as_of    = get_as_of_date()
     matchday = get_current_matchday(matches)
     out_dir  = os.path.join("outputs", "analytics", league_key, "comebacks")
     os.makedirs(out_dir, exist_ok=True)
-    kwargs   = _card_kwargs(config, as_of, matchday)
+    kwargs   = _card_kwargs(config, as_of, matchday, season_display)
 
     # Comeback Kings
     ranked = comeback_kings(matches)
@@ -373,12 +385,13 @@ def generate_comeback_cards(league_key: str, config: dict, matches: pd.DataFrame
     print("  ✓ Bottle Jobs")
 
 
-def generate_form_cards(league_key: str, config: dict, matches: pd.DataFrame):
+def generate_form_cards(league_key: str, config: dict, matches: pd.DataFrame,
+                          season_display: str = ""):
     as_of    = get_as_of_date()
     matchday = get_current_matchday(matches)
     out_dir  = os.path.join("outputs", "analytics", league_key, "form")
     os.makedirs(out_dir, exist_ok=True)
-    kwargs   = _card_kwargs(config, as_of, matchday)
+    kwargs   = _card_kwargs(config, as_of, matchday, season_display)
 
     # Current form — last 5 matches
     ranked = current_form(matches)
@@ -445,12 +458,13 @@ def generate_form_cards(league_key: str, config: dict, matches: pd.DataFrame):
     print("  ✓ Rolling Attack")
 
 
-def generate_over_under_cards(league_key: str, config: dict, matches: pd.DataFrame):
+def generate_over_under_cards(league_key: str, config: dict, matches: pd.DataFrame,
+                          season_display: str = ""):
     as_of    = get_as_of_date()
     matchday = get_current_matchday(matches)
     out_dir  = os.path.join("outputs", "analytics", league_key, "over_under")
     os.makedirs(out_dir, exist_ok=True)
-    kwargs   = _card_kwargs(config, as_of, matchday)
+    kwargs   = _card_kwargs(config, as_of, matchday, season_display)
 
     ranked = over_under_stats(matches)
     create_analytics_card(
@@ -471,49 +485,61 @@ def generate_over_under_cards(league_key: str, config: dict, matches: pd.DataFra
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def run(leagues: list[str]):
+def run_league(league_key: str) -> None:
+    """Generate every analytics card for a single league."""
+    config = LEAGUE_CONFIG[league_key]
+    print(f"[ {config['display_name']} ]")
+
+    if not os.path.exists(config["data_path"]):
+        print(f"  x Data file not found: {config['data_path']}\n")
+        return
+
+    matches = pd.read_csv(config["data_path"], encoding="utf-8-sig")
+
+    season  = detect_season(matches)
+    current = matches[matches["Season"] == season]
+
+    if current.empty:
+        print(f"  x No data found for season {season}\n")
+        return
+
+    display  = season_label(season)
+    matchday = get_current_matchday(current)
+
+    print(f"  {season}  ·  {len(current)} matches  ·  "
+          f"Matchday {matchday}/{config['total_matchdays']}")
+
+    generate_attacking_cards(league_key, config, current, display)
+    generate_defensive_cards(league_key, config, current, display)
+    generate_discipline_cards(league_key, config, current, display)
+    generate_referee_cards(league_key, config, current, display)
+    generate_home_away_cards(league_key, config, current, display)
+    generate_comeback_cards(league_key, config, current, display)
+    generate_form_cards(league_key, config, current, display)
+    generate_over_under_cards(league_key, config, current, display)
+
+
+def run(leagues: list[str]) -> None:
     as_of = get_as_of_date()
     print(f"\n{'='*56}")
-    print(f"  Analytics Card Generator — {as_of}")
+    print(f"  Analytics Card Generator - {as_of}")
     print(f"{'='*56}\n")
 
     for league_key in leagues:
-        config = LEAGUE_CONFIG[league_key]
-        print(f"[ {config['display_name']} ]")
-
-        if not os.path.exists(config["data_path"]):
-            print(f"  ✗ Data file not found: {config['data_path']}\n")
-            continue
-
         try:
-            matches = pd.read_csv(config["data_path"], encoding="utf-8-sig")
-            current = matches[matches["Season"] == config["season"]]
-            if current.empty:
-                print(f"  ✗ No data found for season {config['season']}\n")
-                continue
-
-            matchday = get_current_matchday(current)
-            print(f"  Loaded {len(current)} matches · Matchday {matchday}/{config['total_matchdays']}")
-
-            generate_attacking_cards(league_key, config, current)
-            generate_defensive_cards(league_key, config, current)
-            generate_discipline_cards(league_key, config, current)
-            generate_referee_cards(league_key, config, current)
-            generate_home_away_cards(league_key, config, current)
-            generate_comeback_cards(league_key, config, current)
-            generate_form_cards(league_key, config, current)
-            generate_over_under_cards(league_key, config, current)
-
+            run_league(league_key)
         except Exception as e:
             import traceback
-            print(f"  ✗ Error: {e}")
+            print(f"  x Error: {e}")
             traceback.print_exc()
-            print()
-            continue
-
         print()
 
     print("Done.\n")
+
+
+def main(league: str | None = None) -> None:
+    """Convenience entry point matching main.py / generate_cards.py."""
+    run([league] if league else list(LEAGUE_CONFIG.keys()))
 
 
 if __name__ == "__main__":

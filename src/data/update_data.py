@@ -20,6 +20,20 @@ FOOTBALL_DATA_LEAGUE_CODES = {
 }
 
 
+# Status codes that mean "this season's file isn't on the server yet",
+# rather than something being broken.
+#
+# 404 is the obvious one. 300 (Multiple Choices) is what football-data.co.uk
+# actually returns for a missing CSV - its Apache content negotiation offers
+# alternatives instead of a clean not-found. Both mean the same thing here:
+# the season hasn't started, or no results have been published for it yet.
+NOT_PUBLISHED_STATUS_CODES = {300, 404}
+
+# A published-but-empty file (headers only, or a stub) is also treated as
+# not yet available.
+MIN_USABLE_BYTES = 100
+
+
 def season_to_football_data_code(season: str) -> str:
     start_year, end_year = season.split("_")
     return start_year[-2:] + end_year[-2:]
@@ -61,11 +75,28 @@ def raw_output_path(league: str, season: str) -> Path:
     return league_dir / f"{league}_{season}.csv"
 
 
+def _print_not_published(league: str, season: str, reason: str) -> None:
+    print(f"Not available yet: {reason}")
+    print(
+        f"football-data.co.uk publishes a season's CSV once matches have "
+        f"been played, so {league} {season} should appear shortly after the "
+        f"first matchday. Continuing with existing data."
+    )
+
+
 def download_football_data_csv(
     league: str,
     season: str,
     timeout: int = 30,
-) -> Path:
+) -> Path | None:
+    """
+    Download one league-season CSV from football-data.co.uk.
+
+    Returns the saved path on success, or None if the season isn't
+    published yet (an expected state before a season starts, not an error).
+    Genuine failures - network problems, server errors, blocked requests -
+    still raise.
+    """
     url = football_data_url(
         league=league,
         season=season,
@@ -93,6 +124,14 @@ def download_football_data_csv(
         },
     )
 
+    if response.status_code in NOT_PUBLISHED_STATUS_CODES:
+        _print_not_published(
+            league=league,
+            season=season,
+            reason=f"server returned {response.status_code} for this season",
+        )
+        return None
+
     if response.status_code != 200:
         raise RuntimeError(
             f"Failed to download data from {url}. "
@@ -101,11 +140,13 @@ def download_football_data_csv(
 
     text = response.text.strip()
 
-    if len(text) < 100:
-        raise RuntimeError(
-            f"Downloaded file from {url} looks too small. "
-            "The season may not be available yet."
+    if len(text) < MIN_USABLE_BYTES:
+        _print_not_published(
+            league=league,
+            season=season,
+            reason="the file exists but is empty",
         )
+        return None
 
     output_path.write_text(
         text,
@@ -120,7 +161,7 @@ def download_football_data_csv(
 def update_league_data(
     league: str,
     season: str,
-) -> Path:
+) -> Path | None:
     return download_football_data_csv(
         league=league,
         season=season,
@@ -130,7 +171,7 @@ def update_league_data(
 def update_current_league_data(
     league: str = "epl",
     season: str | None = None,
-) -> Path:
+) -> Path | None:
     if season is None:
         season = infer_season_from_today()
 
@@ -146,7 +187,12 @@ if __name__ == "__main__":
     league  = sys.argv[1] if len(sys.argv) > 1 else "epl"
     season  = sys.argv[2] if len(sys.argv) > 2 else None
 
-    update_current_league_data(
+    saved = update_current_league_data(
         league=league,
         season=season,
     )
+
+    # Exit 1 when there was nothing to download, so a scheduled task or
+    # shell loop can tell "updated" from "not published yet" without
+    # parsing output. Not an error condition - just a different outcome.
+    sys.exit(0 if saved else 1)

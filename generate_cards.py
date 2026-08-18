@@ -10,6 +10,11 @@ Generates social-media-ready forecast cards:
   3. Match detail cards - one per fixture in the next matchday, with
      predicted scoreline, expected goals, and outcome probabilities.
 
+Every fixture card generated is also written to the predictions
+archive at data/predictions/{league}/{season}.csv, so the prediction
+survives the run that made it and can later be scored against the
+actual result by generate_results.py.
+
 This script reuses the same lower-level functions as
 src.live.live_forecast.run_live_forecast, but calls them directly so
 that it also has access to:
@@ -42,6 +47,8 @@ from src.simulation.monte_carlo import (
 
 from src.visualization.card import CardGenerator
 
+from src.data.predictions_archive import append_predictions
+
 from src.config.season_config import (
     get_forecast_season_context,
     print_forecast_context,
@@ -62,8 +69,8 @@ BASE_DIR = Path(__file__).resolve().parent
 # is decided). Leave as None to use the current date via
 # get_forecast_season_context, same as main.py.
 #
-# Example: AS_OF_DATE_OVERRIDE = "2025-12-31"
-AS_OF_DATE_OVERRIDE = "2025-12-31"
+# Example: AS_OF_DATE_OVERRIDE = None  # "2025-12-31"
+AS_OF_DATE_OVERRIDE = None  # "2025-12-31"
 
 # Should match the parameters used in main.py's run_live_forecast call,
 # so the cards reflect the same forecast that main.py produced.
@@ -239,6 +246,19 @@ def main(league: str | None = None):
     if next_md.empty:
         print("\nCould not determine next matchday fixtures.")
         return
+
+    # Archive this matchday's predictions before rendering the cards.
+    # predicted_on is as_of_date (not today) so AS_OF_DATE_OVERRIDE runs
+    # archive under the date the forecast represents. Re-running on the
+    # same date is a no-op rather than a duplicate.
+    archive_file = append_predictions(
+        predictions=next_md,
+        league=league_code,
+        season=season,
+        predicted_on=as_of_date,
+    )
+
+    print(f"Predictions archived: {archive_file}")
 
     overview_path = gen.create_matchday_overview_card(
         fixtures_df=next_md,
