@@ -31,11 +31,21 @@ src/
 
 The core prediction models (`src/models/`) and season simulation logic (`src/simulation/`), along with model calibration parameters, are kept private and are not included in this repository. This repo shows the data pipeline, backtesting harness, live forecasting orchestration, and visualization layer around them.
 
-## Setup
+## Data source
 
-```bash
-pip install -r requirements.txt
-```
+Historical and current-season match results come from [football-data.co.uk](https://www.football-data.co.uk) (the season CSV files under `mmz4281/`). The scripts download them at run time; no data is committed to this repository. The data stays subject to football-data.co.uk's own terms of use, so check them before reusing or republishing the data.
+
+## Setup (Windows PowerShell)
+
+The virtual environment lives outside the project folder, in `%LOCALAPPDATA%\venvs`:
+
+    git clone https://github.com/eokinyo/sportsAnalytics.git
+    cd sportsAnalytics
+    py -m venv $env:LOCALAPPDATA\venvs\sportsAnalytics
+    & $env:LOCALAPPDATA\venvs\sportsAnalytics\Scripts\Activate.ps1
+    pip install -r requirements.txt
+
+On macOS or Linux, use `python3 -m venv ~/.cache/venvs/sportsAnalytics` and `source ~/.cache/venvs/sportsAnalytics/bin/activate`.
 
 ## Usage
 
@@ -44,3 +54,7 @@ python main.py
 ```
 
 See `run_all_leagues.py` and `run_all_backtests.py` for batch runs across all leagues.
+
+## Licence
+
+No licence has been chosen for this repository yet, so all rights are reserved by default. Data downloaded by the code is not covered by any licence here and stays under its provider's terms.
