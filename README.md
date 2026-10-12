@@ -57,4 +57,4 @@ See `run_all_leagues.py` and `run_all_backtests.py` for batch runs across all le
 
 ## Licence
 
-No licence has been chosen for this repository yet, so all rights are reserved by default. Data downloaded by the code is not covered by any licence here and stays under its provider's terms.
+The code is released under the MIT License, see [LICENSE](LICENSE). The licence covers the code in this repository only. Data downloaded by the code is not included and stays under its provider's terms.
